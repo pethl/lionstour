@@ -1,0 +1,31 @@
+<table>
+	<tr>
+		<th>Match No.</th>
+		<th>Date</th>
+		<th>Opponent</th>
+		<th>Location</th>
+		<th>Test</th>
+		<th>Home Team</th>
+		<th>Lions</th>
+	</tr>
+		<% @predicts = Predict.where(:matchpick_id => (params[:id])) %>
+
+	<% for predict in @predicts do %>
+	<tr>
+			
+		<% r = predict.fixture_id %>	
+		<td><center><%= r %></td>
+		<td><center><%= Fixture.find(r).match %></td>
+		<td nowrap="nowrap"><%= Fixture.find(r).hometeam %></td>
+		<td><center><%= Fixture.find(r).city %></td>
+			<td><center><% fix = Fixture.find(r).test %><% unless fix.nil? %>
+				<% if fix == true %>
+				<i class='icon-ok'></i>
+				<% else %>
+			<% end %><% end %>
+			</center></td>
+					<td><center><%= predict.homescore %></td>
+					<td><center><%= predict.awayscore   %></td>
+	</tr>	
+	<% end %>
+	</table>

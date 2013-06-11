@@ -1,0 +1,60 @@
+	<%= render 'matchpicks/teamhead' %>
+<div class="row">
+  <div class="span3 offset2">
+	
+	<h3>Forwards</h3>
+	
+	<table>
+	<tr>
+	<td><b>Name</td>
+	<td><b><center>Position</td>
+	</tr>
+	</table>
+	
+	<% @playerpicks = Playerpick.where(:matchpick_id => params[:id],:selected => true)%>
+	<% @playerpicks = @playerpicks.order("id ASC") %>
+		<% for playerpick in @playerpicks do %>
+		
+			<% d = playerpick.squad_id %>
+			<% q = Squad.find(d) %>
+			<% if q.group == "Forwards" %>
+			<table>
+			<tr>	
+			<td><%= q.name %></td>	
+			<td><center><%= q.position_strg %></td>
+			</tr>
+			<% end %>
+			</table>
+		<% end %>
+	<br>
+	</div>
+
+  <div class="span3 offset1">
+	
+	<h3>Backs</h3>
+	
+	<table>
+	<tr>
+	<td><b>Name</td>
+	<td><b><center>Position</td>
+	</tr>
+	</table>
+	<% @playerpicks = Playerpick.where(:matchpick_id => params[:id],:selected => true)%>
+	<% @playerpicks = @playerpicks.order("id ASC") %>
+	
+		<% for playerpick in @playerpicks do %>
+			<table>
+			<% d = playerpick.squad_id %>
+			<% q = Squad.find(d) %>
+			<% if q.group == "Backs" %>
+		<tr class="success">
+			<td><%= q.name %></td>	
+			<td nowrap="nowrap"><center><%= q.position_strg %></td>
+			</tr>
+			<% end %>
+			</table>
+			<% end %><br>
+			
+	</div>
+</div>
+

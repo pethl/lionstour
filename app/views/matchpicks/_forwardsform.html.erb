@@ -1,0 +1,41 @@
+
+<div class="row">
+  <div class="span5 offset4">
+
+	<table>
+	<tr>
+	<td><b>Name</td>
+	<td><b><center>Position</td>
+	<td><b><center>Select</td>
+	</tr>
+	</table>
+	<% @playerpicks = Playerpick.where(:matchpick_id => params[:id])%>
+	<% @playerpicks = @playerpicks.order("id ASC") %>
+		<%= form_tag selected_matchpicks_path, method: :put do %>
+		<%= hidden_field_tag "matchpick_id", params[:id] %>
+		<% for playerpick in @playerpicks do %>
+		
+			<% d = playerpick.squad_id %>
+			<% q = Squad.find(d) %>
+			<% if q.group == "Forwards" %>
+			<table>
+			<tr>	
+			<td><%= q.name %></td>	
+			<td><center><%= q.position_strg %></td>
+			
+			<td>	<center><% unless playerpick.selected.nil? %>
+					<% if playerpick.selected == true %>
+					<i class='icon-ok'></i>
+					<% else %>
+					<center><%= check_box_tag "select_playerpick_ids[]", playerpick.id %></td>
+				<% end %><% end %>
+			</center>
+			</tr>
+			<% end %>
+			</table>
+		<% end %>
+		<br>	
+		<%= submit_tag "Save Forwards", class: "btn btn-success" %>	<% end %>
+	</div>
+	</div>
+

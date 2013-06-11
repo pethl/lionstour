@@ -1,0 +1,52 @@
+<h3>Scoreboard</h3>
+
+<ul class="nav nav-tabs">
+<li class="active">	<a href="/scoreboards">Score Summary</a>
+  <li>
+   	<a href="/scoreboards/summary">Scores by Match</a>
+  </li>
+</ul>
+  <br>
+
+<div class="row-fluid">
+  <div class="span6 offset1">
+<table>
+  <tr>
+    <th>Competitor</th>
+    <th><center>Total</center></th>
+  </tr>
+<% @scoreboards_user.each do |user_id, scoreboards| %>
+
+  <tr>
+    <td><% m = user_id %>	
+		<%= User.find(m).name %> 
+	</td>
+
+    <td><center>
+	<% if scoreboards.any? %>
+	<% i = 0 %>
+	<% scoreboards.group_by { |t| t.user_id } %>
+	<% scoreboards.each do |scoreboard| %>
+	<% i += scoreboard.matchscore %>
+	<% end %>
+	<%= i %>
+	<% end %>
+	</center></td>
+  </tr>
+<% end %>
+</table>
+</div></div>
+<% if signed_in? && current_user.admin? %>	
+<br />
+<div class="btn-group btn-group-vertical">
+  <button class="btn btn-large"><%= link_to 'New Scoreboard', new_scoreboard_path, class: "btn btn-primary" %></button>
+  <button class="btn">	<%= form_tag generate_scoreboards_path do %>
+		<%= text_field_tag :fixture_id %>
+		<%= submit_tag "Generate" %>
+
+	<% end %></button>
+	<% end %>
+
+
+
+

@@ -1,0 +1,45 @@
+<table>
+	<tr>
+		<th>Match No.</th>
+		<th>Date</th>
+		<th>Opponent</th>
+		<th>Location</th>
+		<th>Test</th>
+		<th>Home Team</th>
+		<th>Lions</th>
+		<th></th>
+	</tr>
+	<tr><td></td><td></td><td></td><td></td>
+		<td><i>* *save scores</i></td><td><i>one row at a </i></td><td><i>time * *</i></td></tr>
+
+		<% @predicts = Predict.where(:matchpick_id => (params[:id])) %>
+
+	<% for predict in @predicts do %>
+	<tr>
+			<% r = predict.fixture_id %>
+			<td><center><%= r %></td>	
+		<td><center><%= Fixture.find(r).match %></td>
+		<td nowrap="nowrap"><%= Fixture.find(r).hometeam %></td>
+		<td><%= Fixture.find(r).city %></td>
+			<td><center><% fix = Fixture.find(r).test %><% unless fix.nil? %>
+				<% if fix == true %>
+				<i class='icon-ok'></i>
+				<% else %>
+			<% end %><% end %>
+			</center></td>
+					<%= form_tag scores_predicts_path, method: :put do %>
+				<td>
+						<%= number_field_tag "home_predict", params[:homescore], :value=>predict.homescore %>
+						
+						<%= hidden_field_tag "id", predict.id %>
+						<%= hidden_field_tag "matchpick_id", params[:id] %>
+								</td>
+								<td><center><%= number_field_tag "away_predict", params[:awayscore], :value=>predict.awayscore   %></td>
+								<td><% if predict.homescore > 0 %>
+								<%= submit_tag "Edit score", class: "btn btn-info" %>
+								<% else %>
+								<%= submit_tag "Save score", class: "btn btn-success" %><% end %><% end %></td>
+				
+	</tr>	
+<% end %>
+	</table>

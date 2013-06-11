@@ -1,0 +1,55 @@
+<h3>Fixtures 2013</h3>
+
+<ul class="nav nav-tabs">
+  <li class="active">
+   	<a href="/fixtures">List View</a>
+  </li>
+  <li>	<a href="/fixtures/calendar">Calendar View</a>
+</ul><br>
+
+<div class="row-fluid">
+  <div class="span6 offset1">
+
+<table class="table">
+
+<% @fixtures.each do |fixture| %>
+  <tr>
+	<td><%= fixture.match.strftime("%a, %d %B") %><br><%= fixture.location %></td>   
+   
+ 	<td><strong><%= fixture.hometeam %></strong>
+    	<% unless fixture.test.nil? %>
+		<% if fixture.test == true %>
+		<i>(Test)</i><br>
+			<a class="btn btn-mini btn-warning" <%= link_to 'See Predictions', fixture %> </a>
+		
+		<% else %>
+	<% end %><% end %></td>
+
+    <td>
+	<% if signed_in? && current_user.admin? %>
+
+	<h6 class="muted"><%= link_to 'S', fixture %> <%= fixture.id %>: <%= link_to 'E', edit_fixture_path(fixture) %> : <%= link_to 'D', fixture, method: :delete, data: { confirm: 'Are you sure?' } %></h6 class="muted"></td>
+	<% else %>
+	
+		<% end %>
+
+	<% end %>
+  </tr>
+</table>
+</div>
+</div>
+
+<br />
+<% if signed_in? && current_user.admin? %>	
+<div class="btn-group btn-group-vertical">
+  <button class="btn btn-large"><%= link_to "Add a fixture", new_fixture_path, class: "btn btn-primary" %></button>
+  <button class="btn">	<%= form_tag import_fixtures_path, multipart: true do %>
+		<%= file_field_tag :file %>
+		<%= submit_tag "Import" %>
+	<% end %></button>
+
+<% end %>
+
+</div>
+</div>
+

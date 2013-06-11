@@ -1,0 +1,34 @@
+
+<h2>Test Match Teams</h2><br>
+
+<% if @users.any? %>
+	<% @users.each do |user| %>
+		<% userid = user.id %>
+		<% @matchpicks = @matchpicks_by_user[userid] %>
+
+			<td><b><%= user.name %></b></td>
+			
+			<!-- there should always be at least one matchpick for each user as its auto created on user after_create
+			-->
+			<ul><% @matchpicks.each do |matchpick| %>
+						<% unless matchpick.reason == "Scores"%>
+						
+			<% if matchpick.status == "Locked" %>
+				
+							<% matchid = matchpick.id %>
+							<% @playerpicks = Playerpick.where(:matchpick_id => matchid, :selected => true) %>
+							<% @playerpicks = @playerpicks.order("squad_id ASC")%>
+						
+						<ul><% @playerpicks.each do |playerpick| %>
+						<li><% s = playerpick.squad_id %> 
+							<%= Squad.find(s).name %> (<%= Squad.find(s).position_strg %>)
+						</li>
+							<% end %>
+					</ul>				
+ 			<% else %>
+			<i>	Team selection not yet locked.</i>
+			<% end %>
+			<% end %>	<% end %>
+				</ul>			
+<% end %>
+<% end %>

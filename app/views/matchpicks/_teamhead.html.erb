@@ -1,0 +1,24 @@
+<% unless @matchpick.status == "Locked"%>
+<%= form_for @matchpick, :url => { :action => "lock" }, :html => {:class => "nifty_form"} do |f| %>
+	<table class="table">
+	<tr>
+		<td><center>Your Team Status is:</td>
+		<td>
+				<div class="field">
+				    <%= f.text_field :status, :disabled=>true%>
+				</div>
+      			</div>
+				<%= hidden_field_tag "matchpick_id", params[:id] %>
+		</td>
+		<td><center>Ready to lock your team?</td>
+		<td>
+			<div class="actions">
+    		<%= f.submit "Lock Team", class: "btn btn-danger"  %>
+			</div>	<% end %>
+		</td>
+	</tr>
+	</table>
+	
+	<% else %>
+	<h3>Congratulations your scores are <%= @matchpick.status %> </h3><br>
+	<% end %>

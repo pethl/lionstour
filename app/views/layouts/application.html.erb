@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
+<head>
+	<meta charset="utf-8">
+  	<title>Lions Tour 13</title>
+ 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+
+	<!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="assets/js/html5shiv.js"></script>
+    <![endif]-->
+
+    <!-- Le fav and touch icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png">
+      <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png">
+                    <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png">
+                                  
+					<!-- Javascript files (you can put them on HEAD if you want) -->
+
+								<script>
+								// Load this when the DOM is ready
+								$(function(){
+								  $(".collapse").collapse()
+								});
+								</script>
+
+</head>
+<body>	
+	
+	<%= render 'layouts/header' %>
+	
+	<div class="container">
+	  <% flash.each do |name, msg| %>
+	    <div class="alert alert-<%= name == :notice ? "success" : "error" %>">
+
+	      <%= msg  %>
+	    </div>
+	  <% end %>
+	</div>
+    	
+
+	<div class="container">
+		<br>
+			<%= yield %>
+
+		</div>
+
+<!-- Debugging for dev only
+   ================================================== -->	
+<%= debug(params) if Rails.env.development? %>
+
+
+</body>
+
+</html>

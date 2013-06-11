@@ -1,0 +1,60 @@
+
+<table class="table"
+	<tr>
+		<td><h3>Squad Performance</h3></td>
+		<td><b><%= link_to 	'Squad', squads_path %></b></td>
+	
+	</tr>
+</table>
+
+<% if @squad_performances.any? %>
+<% @squad_performances_fixture.each do |fixture_id, squad_performances| %>
+<h3>	<% m = fixture_id %>	
+		<%= Fixture.find(m).full_fixture %> (<%= m %>)
+	</h3>	
+	<%= form_tag onfield_squad_performances_path, method: :put do %>
+<table class="table table-condensed">
+	  <tr>
+
+    <th>Player Name</th>
+    <th><center>Did Play?</th>
+	<th><center>Play</th>
+    <th><center>Tries</th>
+    <th><center>Drop goals</th>
+    <th><center>Total</center></th>
+    <th></th>
+  </tr>
+<% squad_performances.each do |squad_performance| %>
+  <tr>
+   
+    <td><% r = squad_performance.squad_id %><%= r %>	
+		<%= Squad.find(r).name %></td>
+	<td><center><%= check_box_tag "squad_performance_ids[]", squad_performance.id %></td>
+		<td> <center><%= squad_performance.play %>
+	</center></td>
+    <td><center><%= squad_performance.tries %></center></td>
+    <td><center><%= squad_performance.dropgoals %></center></td>
+    <td><center><%= squad_performance.total %></center></td>
+    <td><b><%= link_to 'E', edit_squad_performance_path(squad_performance) %> :
+   		<%= link_to 'D', squad_performance, method: :delete, data: { confirm: 'Are you sure?' } %></b></td>
+  </tr>
+<% end %>
+</table>
+<%= submit_tag "Update Played flags", class: "btn btn-success" %>
+		<% end %>
+<% end %>
+<% else %>
+<% end %>
+
+
+<br />
+
+<div class="btn-group btn-group-vertical">
+  <button class="btn btn-large"><%= link_to 'New Squad performance', new_squad_performance_path , class: "btn btn-primary" %></button>
+  <button class="btn">	<%= form_tag generate_squad_performances_path, multipart: true do %>
+		<%= text_field_tag :fixture_id %>
+		<%= submit_tag "Generate" %>
+
+	<% end %></button>
+
+

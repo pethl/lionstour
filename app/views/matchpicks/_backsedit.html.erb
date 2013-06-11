@@ -1,0 +1,44 @@
+
+<div class="row">
+  <div class="span6 offset2">
+
+	<table>
+	<tr>
+	<td><b>Name</td>
+	<td><b><center>Position</td>
+	<td><b><center>Selected?</td>
+	<td><b><center>Add Player</td>
+	<td><b><center>Remove Player</td>
+	</tr>
+	</table>
+	<% @playerpicks = Playerpick.where(:matchpick_id => params[:id])%>
+	<% @playerpicks = @playerpicks.order("id ASC") %>
+	
+		<%= form_tag selected_matchpicks_path, method: :put do %>
+		<%= hidden_field_tag "matchpick_id", params[:id] %>
+	
+		<% for playerpick in @playerpicks do %>
+		
+				<% d = playerpick.squad_id %>
+				<% q = Squad.find(d) %>
+				
+				<% if q.group == "Backs" %>
+			<table>
+			<tr>	
+			<td><%= q.name %></td>	
+			<td><center><%= q.position_strg %></td>
+			<td><center><% unless playerpick.selected.nil? %>
+						<% if playerpick.selected == true %>
+						<i class='icon-ok'></i><% else %><% end %><% end %></td>
+			<td><center>[+]<%= check_box_tag "select_playerpick_ids[]", playerpick.id %></center></td>
+			<td><center>[-]<%= check_box_tag "remove_playerpick_ids[]", playerpick.id %></center></td>
+			</tr>
+			</table>
+			<% end %>	<% end %>
+		
+	
+		<br>	
+		<%= submit_tag "Save Changes", class: "btn btn-success" %>	<% end %>
+	</div>
+	</div>
+

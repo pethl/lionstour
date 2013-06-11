@@ -1,0 +1,34 @@
+
+
+<h3>Squadpicks</h3>
+
+<table class="table">
+  <tr>
+    <th>User</th>
+    <th>Status</th></th><th>
+    <th></th>
+  </tr>
+
+<% @matchpicks.each do |matchpick| %>
+  <tr>
+    <td><% t = User.find(matchpick.user_id) %><%= t.name %></td>
+    <td><b><%= matchpick.status %></b>
+<td>
+	 <% if @playerpicks_by_match[matchpick.id] %>
+
+ <% @playerpicks_by_match[matchpick.id].each do |playerpick| %>
+
+	<ul>
+		<% if playerpick.selected == true %>
+		<i class='icon-ok'></i>
+		<% else %><% end %>  
+	   	<%= playerpick.name %>
+		</ul>
+		<% end %><% end %>
+	
+</td>
+    <td><h6 class="muted"><%= link_to 'show', matchpick %> <br> <%= link_to 'edit', edit_matchpick_path(matchpick) %> <br> <%= link_to 'destroy', matchpick, method: :delete, data: { confirm: 'Are you sure?' } %><h6 class="muted"></td>
+	<% end %>
+  </tr>
+</table>
+

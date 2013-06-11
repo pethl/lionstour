@@ -1,0 +1,33 @@
+<div>
+<fieldset>
+<table class="table">
+
+	<tr>
+		<td><b> Team Status   </b></td>
+		<td><div class="field">
+		    <%= f.select(:status, Matchpick::PICK_TYPES)%>
+		  </div>
+		</td>
+	</tr>
+	<tr>
+		<i>Make your Test match team selection by selecting the checkbox next to a players name.<br>
+			You can save your selections before locking in your team and return to it later.<br>
+			When you are happy with you team selection, change <b>Team Status</b> to <b>Locked</b>.<br>
+			Once Locked, your team cannot be changed, but you can view other users' Locked team selections.</i>
+	</tr>
+
+	
+<!-- might need this later under admin, but currently the regeneration of the team doesn't work on create matchpick so dont use til fixed
+  <%= f.check_box :_destroy %><%= f.label :_destroy, "Drop team and start again" %><br>
+-->
+  
+<%= f.fields_for :playerpicks do |builder| %>
+    <%= render 'playerpick_fields', f: builder %>
+  <% end %>
+ 
+<!-- put this under admin function only 
+ <%= link_to_add_fields "Add Player Picks", f, :playerpicks %>
+-->
+
+</fieldset>
+</div>

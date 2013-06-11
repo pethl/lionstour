@@ -1,0 +1,52 @@
+
+	<% r = @matchpick.user_id %><% @user = User.find(r) %>
+<h3>Test Match Team ::<%= @user.name %>::</h3><br>
+<div>
+
+<% unless @matchpick.status == "Locked"%>
+
+<%= form_for @matchpick, :url => { :action => "choose" }, :html => {:class => "nifty_form"} do |f| %>
+
+	<%= f.select(:choose, Matchpick::PICK_CHOOSE) %>
+<%= hidden_field_tag "matchpick_id", params[:id] %>
+ 
+  <%= f.submit "Go" %>
+
+<% end %>
+<% end %>
+
+<% if @matchpick.status == "Locked" %>
+<%= render 'matchpicks/team' %>
+<% else %>
+
+	<% if @matchpick.choose == "Select.." %>
+	<%= render 'matchpicks/rules' %>
+
+	<% elsif @matchpick.choose == "Forwards" %>
+		<%= render 'matchpicks/forwardsform' %>
+	
+	<% elsif @matchpick.choose == "Backs"%>
+		<%= render 'matchpicks/backsform' %>
+	
+	<% elsif 	@matchpick.choose == "Summary"%>
+	
+			<%= render 'matchpicks/team' %>
+	
+	<% elsif 	@matchpick.choose == "Edit Forwards"%>
+			<h3>Edit forwards</h3> 
+			<%= render 'matchpicks/teamformf' %>
+	
+	<% elsif 	@matchpick.choose == "Edit Backs"%>
+			<h3>Edit backs</h3> 
+				<%= render 'matchpicks/teamformb' %>
+
+
+
+	<% end %>
+
+<% end %>
+<div>
+<%= link_to 'Back to User Summary >>', @user %>
+
+
+

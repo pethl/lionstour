@@ -1,0 +1,31 @@
+<h3>Fixtures 2013</h3>
+
+<ul class="nav nav-tabs">
+  <li>
+   	<a href="/fixtures">List View</a>
+  </li>
+  <li class="active">	<a href="/fixtures/calendar">Calendar View</a>
+</ul>
+
+<div id="fixtures">
+	<h3 id="month">
+	  <%= link_to "<", date: @date.prev_month %>
+	  <%= @date.strftime("%B %Y") %>   
+	  <%= link_to ">", date: @date.next_month %>
+	</h3>  
+
+	<%= calendar @date do |date| %>
+    <%= date.day %>
+
+    <% if @fixtures_by_date[date] %>
+    <p><b>
+
+      <% @fixtures_by_date[date].each do |fixture| %>
+        <%= link_to fixture.hometeam, fixture %>
+      <% end %>
+    </b></p>
+    <% end %>
+  <% end %>
+</div>
+
+ 

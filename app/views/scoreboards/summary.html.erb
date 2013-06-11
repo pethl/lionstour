@@ -1,0 +1,40 @@
+<h3>Scoreboard</h3>
+
+<ul class="nav nav-tabs">
+  <li>	<a href="/scoreboards">Score Summary</a>
+	<li class="active">
+	   	<a href="/scoreboards/summary">Scores by Match</a>
+	  </li>
+</ul><br>
+<div class="row-fluid">
+  <div class="span6 offset1">
+
+<% @scoreboards_user.each do |user_id, scoreboards| %>
+<h3>	<% m = user_id %>	
+		<%= User.find(m).name %> 
+	</h3>
+
+<table class="table condensed">
+  <tr>
+    <th>Fixture</th>
+    <th><center>Matchscore</center></th>
+    <th>Comments</th>
+    <th></th>
+  </tr>
+
+<% scoreboards.each do |scoreboard| %>
+  <tr>
+    <td><% f = scoreboard.fixture_id %>	
+			<%= Fixture.find(f).hometeam %></td>
+
+    <td><center><%= scoreboard.matchscore %></center></td>
+    <td><%= scoreboard.comments %></td>
+    <td><b><%= link_to 'S', scoreboard %> : 
+    <%= link_to 'E', edit_scoreboard_path(scoreboard) %>
+    : <%= link_to 'D', scoreboard, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+<% end %>
+<br />
+</div></div>

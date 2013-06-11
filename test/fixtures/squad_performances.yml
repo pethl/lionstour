@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  fixture_id: 1
+  squad_id: 1
+  play: false
+  tries: 1
+  dropgoals: 1
+  total: 1
+
+two:
+  fixture_id: 1
+  squad_id: 1
+  play: false
+  tries: 1
+  dropgoals: 1
+  total: 1

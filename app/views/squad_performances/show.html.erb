@@ -1,0 +1,36 @@
+
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Fixture:</b>
+  <%= @squad_performance.fixture_id %>
+</p>
+
+<p>
+  <b>Squad:</b>
+  <%= @squad_performance.squad_id %>
+</p>
+
+<p>
+  <b>Play:</b>
+  <%= @squad_performance.play %>
+</p>
+
+<p>
+  <b>Tries:</b>
+  <%= @squad_performance.tries %>
+</p>
+
+<p>
+  <b>Dropgoals:</b>
+  <%= @squad_performance.dropgoals %>
+</p>
+
+<p>
+  <b>Total:</b>
+  <%= @squad_performance.total %>
+</p>
+
+
+<%= link_to 'Edit', edit_squad_performance_path(@squad_performance) %> |
+<%= link_to 'Back', squad_performances_path %>

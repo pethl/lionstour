@@ -1,0 +1,26 @@
+
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Fixture:</b>
+  <%= @scoreboard.fixture_id %>
+</p>
+
+<p>
+  <b>User:</b>
+  <%= @scoreboard.user_id %>
+</p>
+
+<p>
+  <b>Matchscore:</b>
+  <%= @scoreboard.matchscore %>
+</p>
+
+<p>
+  <b>Comments:</b>
+  <%= @scoreboard.comments %>
+</p>
+
+
+<%= link_to 'Edit', edit_scoreboard_path(@scoreboard) %> |
+<%= link_to 'Back', scoreboards_path %>

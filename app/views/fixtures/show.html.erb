@@ -1,0 +1,56 @@
+<p id="notice"><%= notice %></p>
+
+<h3>Lions Test Match Predictions</h3>
+
+<div class="row-fluid">
+  <div class="span3 offset1">
+		<div class="well well-small">
+
+<table>
+	<tr>
+		<td><b>Location:</b></td>
+		<td><%= @fixture.location %></td>
+	</tr>
+	<tr>
+		<td><b>Home team:</b></td>
+		<td><%= @fixture.hometeam %></td>
+	</tr>
+
+		<td><b>Match date:</b></td>
+		<td><%= @fixture.match %></td>
+	</tr>
+	<tr>
+		<td><b>Test ?</b></td>
+		<td>	<% if @fixture.test == true %>
+			<i class='icon-ok'></i>
+			<% else %>
+			No
+		<% end %></td>
+	</tr>
+</table>
+</div>
+</div>
+
+<div class="span6">
+		<% @predicts = Predict.where(:fixture_id => @fixture.id) %>
+		<% for predict in @predicts do %>
+			<% @matchpicks = Matchpick.where(:id => predict.matchpick_id) %>
+			<% if @matchpicks.any? %>
+			<% for matchpick in @matchpicks do %>
+			<% u = matchpick.user_id %>
+			<% end %>		<% end %>
+			
+			<table>	
+			<tr>
+				<td><%= User.find(u).name %></td>
+					<td><center><%= predict.homescore %> : 	<%= predict.awayscore %></center></td>
+			</tr>
+			</table>
+			<% end %>
+			<br>
+<%= link_to 'Back to fixtures', fixtures_path %>
+</div>
+</div>
+
+
+

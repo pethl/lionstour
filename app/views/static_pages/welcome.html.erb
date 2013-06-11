@@ -1,0 +1,28 @@
+
+
+	<br>
+<% if signed_in? %>
+Hi <b><%= current_user.name %></b>
+<% else %>
+Thanks for creating your account.
+<% end %> <br><br>
+<h2>Welcome to the Lions Tour competition</h2><br>
+<br>
+
+You have <strong>two</strong> more steps before your account is complete:<br>
+<br>
+<ul>
+	<h3>1)  Before 1st June - Lock in your predictions for all the Lions tour matches.</h3><br>
+	<h3>2)  Before 22nd June - Lock in your Lions test match team</h3><br>
+
+</ul>
+<br>
+
+<a class="btn btn-large btn-info" <%= link_to 'Get Started >>', @current_user %> </a>
+
+    </div> 
+
+  </body>
+</html>
+
+

@@ -1,0 +1,79 @@
+
+<h2>Test Match Teams - Grid View</h2><br>
+
+<br>
+<%  @squadids = Squad.pluck(:id) %>
+<table class="table table-condensed">
+	<tr>
+		<th>User</th>
+		<th><center><%= Squad.find(@squadids[0]).name %></th>
+		<th><center><%= Squad.find(@squadids[1]).name %></th>
+		<th><center><%= Squad.find(@squadids[2]).name %></th>
+		<th><center><%= Squad.find(@squadids[3]).name %></th>
+		<th><center><%= Squad.find(@squadids[4]).name %></th>
+		<th><center><%= Squad.find(@squadids[5]).name %></th>
+		<th><center><%= Squad.find(@squadids[6]).name %></th>
+		<th><center><%= Squad.find(@squadids[7]).name %></th>
+		<th><center><%= Squad.find(@squadids[8]).name %></th>
+		<th><center><%= Squad.find(@squadids[9]).name %></th>
+		<th><center><%= Squad.find(@squadids[10]).name %></th>	
+	</tr>
+<%= u1 = User.first.id%>	
+<%= @m = Matchpick.where(:user_id => u1, :reason => "Team") %>
+<%= m1 = @m[0].id %>	
+
+
+	<tr><td><%= User.find(u1).name %></td>
+		<td><% @playerpicks = Playerpick.where(:matchpick_id => m1, :squad_id => (@squadids[0]) )%>
+		<center><% up0 = @playerpicks[0].selected %><% if up0 == true %><i class='icon-ok'></i>
+		<% else %><i class='icon-remove'></i><% end %></td>
+		<td><% @playerpicks = Playerpick.where(:matchpick_id => m1, :squad_id => (@squadids[1]) )%>
+		<center><% up1 = @playerpicks[0].selected %><% if up1 == true %><i class='icon-ok'></i>
+			<% else %><i class='icon-remove'></i><% end %></td>
+		<td><% @playerpicks = Playerpick.where(:matchpick_id => m1, :squad_id => (@squadids[2]) )%>
+		<center><% up2 = @playerpicks[0].selected %>	<% if up2 == true %><i class='icon-ok'></i>
+			<% else %><i class='icon-remove'></i><% end %></td>
+		<td><% @playerpicks = Playerpick.where(:matchpick_id => m1, :squad_id => (@squadids[3]) )%>
+		<center><% up3 = @playerpicks[0].selected %><% if up3 == true %><i class='icon-ok'></i>
+			<% else %><i class='icon-remove'></i><% end %></td>
+			<td><% @playerpicks = Playerpick.where(:matchpick_id => m1, :squad_id => (@squadids[4]) )%>
+			<center><%= up4 = @playerpicks[0].selected %></td>
+			<td><% @playerpicks = Playerpick.where(:matchpick_id => m1, :squad_id => (@squadids[5]) )%>
+			<center><%= up5 = @playerpicks[0].selected %></td>
+			<td><% @playerpicks = Playerpick.where(:matchpick_id => m1, :squad_id => (@squadids[6]) )%>
+			<center><%= up6 = @playerpicks[0].selected %></td>
+			<td><% @playerpicks = Playerpick.where(:matchpick_id => m1, :squad_id => (@squadids[7]) )%>
+			<center><%= up7 = @playerpicks[0].selected %></td>
+				<td><% @playerpicks = Playerpick.where(:matchpick_id => m1, :squad_id => (@squadids[8]) )%>
+				<center><%= up8 = @playerpicks[0].selected %></td>
+					<td><% @playerpicks = Playerpick.where(:matchpick_id => m1, :squad_id => (@squadids[9]) )%>
+					<center><% up9 = @playerpicks[0].selected %>	<% if up9 == true %><i class='icon-ok'></i>
+						<% else %><i class='icon-remove'></i><% end %></td>
+					<td><% @playerpicks = Playerpick.where(:matchpick_id => m1, :squad_id => (@squadids[10]) )%>
+					<center><% up10 = @playerpicks[0].selected %><% if up10 == true %><i class='icon-ok'></i>
+						<% else %><i class='icon-remove'></i><% end %></td>
+		</tr>
+<%= u2 = User.last.id%>	
+<%= @m = Matchpick.where(:user_id => u2, :reason => "Team") %>
+<%= m1 = @m[0].id %>		
+		<tr><td><%= User.find(u2).name %></td>
+			<td><% @playerpicks = Playerpick.where(:matchpick_id => m1, :squad_id => (@squadids[0]) )%>
+			<center><%= up0 = @playerpicks[0].selected %></td>
+			<td><% @playerpicks = Playerpick.where(:matchpick_id => m1, :squad_id => (@squadids[1]) )%>
+			<center><%= up1 = @playerpicks[0].selected %></td>
+			<td><% @playerpicks = Playerpick.where(:matchpick_id => m1, :squad_id => (@squadids[2]) )%>
+			<center><%= up2 = @playerpicks[0].selected %></td>
+			<td><% @playerpicks = Playerpick.where(:matchpick_id => m1, :squad_id => (@squadids[3]) )%>
+			<center><%= up3 = @playerpicks[0].selected %></td>
+				<td><% @playerpicks = Playerpick.where(:matchpick_id => m1, :squad_id => (@squadids[4]) )%>
+				<center><%= up4 = @playerpicks[0].selected %></td>
+				<td><% @playerpicks = Playerpick.where(:matchpick_id => m1, :squad_id => (@squadids[5]) )%>
+				<center><%= up5 = @playerpicks[0].selected %></td>
+				<td><% @playerpicks = Playerpick.where(:matchpick_id => m1, :squad_id => (@squadids[6]) )%>
+				<center><%= up6 = @playerpicks[0].selected %></td>
+				<td><% @playerpicks = Playerpick.where(:matchpick_id => m1, :squad_id => (@squadids[7]) )%>
+				<center><%= up7 = @playerpicks[0].selected %></td>
+					<td><% @playerpicks = Playerpick.where(:matchpick_id => m1, :squad_id => (@squadids[8]) )%>
+					<center><%= up8 = @playerpicks[0].selected %></td>
+			</tr>
+	</table>

@@ -1,0 +1,43 @@
+
+<p id="notice"><%= notice %></p>
+
+<% u = @matchpick.user_id %><% @user = User.find(u) %>
+<h3>Score Predictions ::<%= @user.name %>::</h3><br>
+
+	<div class="row">
+	  <div class="span10">
+	<% if @matchpick.status == "Locked" %>
+	<%= render 'predicts/score' %>
+	<% else %>
+	<%= render 'predicts/scoreform' %>
+	<% end %>
+
+</div></div>
+<br>
+		<% r = @matchpick.user_id %><% @user = User.find(r) %>
+		<% unless @matchpick.status == "Locked"%>
+		<%= form_for @matchpick, :url => { :action => "lock" }, :html => {:class => "nifty_form"} do |f| %>
+			<table class="table">
+			<tr>
+				<td><center>Your Team Status is:</td>
+				<td>
+						<div class="field">
+						    <%= f.text_field :status, :disabled=>true%>
+						</div>
+		      			</div>
+						<%= hidden_field_tag "matchpick_id", params[:id] %>
+				</td>
+				<td><center>Ready to lock your scores?</td>
+				<td>
+					<div class="actions">
+		    		<%= f.submit "Lock Scores", class: "btn btn-danger"  %>
+					</div>	<% end %>
+				</td>
+			</tr>
+			</table>
+
+			<% else %>
+			<h3>Congratulations your scores are <%= @matchpick.status %> </h3><br>
+			<% end %>
+		
+<br> <%= link_to 'Back to User Summary >>', @user %>

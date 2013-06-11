@@ -1,0 +1,125 @@
+
+	<% r = @matchpick.user_id %><% @user = User.find(r) %>
+
+<i>To make your Lions Tour Test Match team selection: <br><br>
+	- First, add players using the [+]check box next to their name.<br>
+	- Then, click the [Update Backs] or [Update Forwards] buttons to save your choices.<br><br>
+	- To change your selection use the [-]check box to remove* a player from your team.<br>
+	- Make as many changes as you like prior to locking in your team.<br>
+	<b>* Note:</b> player name remains visible, in case you want to reselect them later.<br>
+	<br>
+
+	- When you are happy with you team selection, change <b>Team Status</b> to <b>Locked*</b>.<br>
+	<b>* Note:</b> Once Locked, your team cannot be changed. <br><br>
+	- Once your team is locked you can view other users' locked team selections.<br>
+	- Don't forget to make your match score predictions.
+	</i>
+<br><br>
+
+<% unless @matchpick.status == "Locked"%>
+<%= form_for(@matchpick) do |f| %>
+	<table class="table"><tr><td>Your Team Status is:</td>
+		<td>
+			<div class="field">
+    		<%= f.select(:status, Matchpick::PICK_STATUS) %>
+  			</div>
+		</td>
+	<td>
+	<div class="actions">
+    	<%= f.submit "Update Team Status", class: "btn btn-success"  %>
+	</div>	<% end %>
+	</td>
+	</tr>
+	<tr>
+		<h3><%= link_to 'Show my team summary', @user %></h3><br>	
+	</tr></table>
+	<% else %>
+<h3>	Your Team Status is: <%= @matchpick.status %> </h3>
+<h3><%= link_to 'Show my team summary', @user %></h3><br>	
+	<% end %> 
+	
+
+	
+<div class="row">
+  <div class="span5offset2">
+	<h2>Forwards</h2>
+	<table>
+	<tr>
+	<td><b>Name</td>
+	<td><b><center>Position</td>
+	<td><b><center>Currently Selected</td>
+	<td><b><center>Add to Test Squad</td>
+	<td><b><center>Remove from Test Squad</td></b>
+	</tr>
+	</table>
+	<% @playerpicks = Playerpick.where(:matchpick_id => params[:id])%>
+	<% @playerpicks = @playerpicks.order("id ASC") %>
+		<%= form_tag selected_matchpicks_path, method: :put do %>
+		<%= hidden_field_tag "matchpick_id", params[:id] %>
+		<% for playerpick in @playerpicks do %>
+		
+			<% d = playerpick.squad_id %>
+			<% q = Squad.find(d) %>
+			<% if q.group == "Forwards" %>
+			<table>
+			<tr>	
+			<td><%= q.name %></td>	
+			<td><center><%= q.position_strg %></td>
+			<td><center><% unless playerpick.selected.nil? %>
+						<% if playerpick.selected == true %>
+							<i class='icon-ok'></i>
+							<% else %>
+							<i class='icon-remove'></i>
+						<% end %><% end %>
+			</td><br>
+			<td><center>(+)<%= check_box_tag "select_playerpick_ids[]", playerpick.id %></td>
+			<td><center>(-)<%= check_box_tag "remove_playerpick_ids[]", playerpick.id %></td>
+			</tr>
+			<% end %>
+			</table>
+		<% end %>
+		<br>	
+		<%= submit_tag "Update Forwards", class: "btn btn-success" %>	<% end %>
+	</div>
+
+  <div class="span5offset6">
+	<h2>Backs</h2>
+	<table>
+	<tr>
+	<td><b>Name</td>
+	<td><b><center>Position</td>
+	<td><b><center>Currently Selected</td>
+	<td><b><center>Add to Test Squad</td>
+	<td><b><center>Remove from Test Squad</td></b>
+	</tr>
+	</table>
+	<% @playerpicks = Playerpick.where(:matchpick_id => params[:id])%>
+	<% @playerpicks = @playerpicks.order("id ASC") %>
+		<%= form_tag selected_matchpicks_path, method: :put do %>
+			<%= hidden_field_tag "matchpick_id", params[:id] %>
+		<% for playerpick in @playerpicks do %>
+			<table>
+			<% d = playerpick.squad_id %>
+			<% q = Squad.find(d) %>
+			<% if q.group == "Backs" %>
+		<tr class="success">
+			<td><%= q.name %></td>	
+			<td><%= q.position_strg %></td>
+				<td><center><% unless playerpick.selected.nil? %>
+					<% if playerpick.selected == true %>
+					<i class='icon-ok'></i>
+					<% else %>
+					<i class='icon-remove'></i>
+				<% end %><% end %>
+				</td><br>
+					<td><center>(+)<%= check_box_tag "select_playerpick_ids[]", playerpick.id %></td>
+					<td><center>(-)<%= check_box_tag "remove_playerpick_ids[]", playerpick.id %></td>
+			</tr>
+			<% end %>
+			</table>
+			<% end %><br>
+				<%= submit_tag "Update Backs", class: "btn btn-success" %>	
+		<% end %>
+	</div>
+</div>
+

@@ -1,0 +1,22 @@
+<%= simple_form_for(@squad_performance) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+	
+	<div class="field">
+		<%= f.label :fixture_id, "Select Match" %>
+		<%= f.collection_select :fixture_id, @fixtures, :id, :full_fixture, :prompt => "Select a match" %>
+		
+	</div>
+    <%= f.input :fixture_id %>
+    <%= f.input :squad_id %>
+    <%= f.input :play %>
+    <%= f.input :tries %>
+    <%= f.input :dropgoals %>
+    <%= f.input :total %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

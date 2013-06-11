@@ -1,0 +1,15 @@
+<%= simple_form_for(@fixture, :html => {:class => 'form-horizontal' }) do |f| %>
+ 
+<fieldset>
+	<legend><%= controller.action_name.capitalize %> Fixture </legend>
+
+<%= f.input :location %>
+<%= f.input :hometeam %>
+<%= f.input :awayteam %>
+<%= f.input :test, as: :radio_buttons %>
+
+<%= f.input :match, as: :string  %>
+
+<%= f.button :submit %>
+<% end %>
+<br>
