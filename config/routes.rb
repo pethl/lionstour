@@ -26,6 +26,8 @@ Lions::Application.routes.draw do
     collection { post :import }
   end
 
+  get 'users/spooky', :to => "users#spooky"
+
 
   resources :users
     resources :sessions, only: [:new, :create, :destroy]

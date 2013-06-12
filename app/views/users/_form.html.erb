@@ -25,6 +25,12 @@
 	  
 	<%= f.label :password_confirmation, "Password Confirmation" %>
 	<%= f.password_field :password_confirmation %><br>
+	
+		<% if current_user.name == "pethl" %>
+		<%= f.label :admin %>
+		<%= f.check_box :admin %><br>
+		<% else %>
+		<% end %>
 
 <i> Password/confirmation must be re-entered <br>prior to updating profile info. <i><br><br>
 				<div class="actions">
