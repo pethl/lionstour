@@ -3,13 +3,15 @@
 <plist version="1.0">
 <dict>
 	<key>currentDocument</key>
-	<string>app/views/users/show.html.erb</string>
+	<string>public/seed_data/lionsmatches.csv</string>
 	<key>documents</key>
 	<array>
 		<dict>
 			<key>children</key>
 			<array>
 				<dict>
+					<key>expanded</key>
+					<true/>
 					<key>name</key>
 					<string>Lions</string>
 					<key>regexFolderFilter</key>
@@ -18,6 +20,8 @@
 					<string></string>
 				</dict>
 			</array>
+			<key>expanded</key>
+			<true/>
 			<key>name</key>
 			<string>untitled group</string>
 		</dict>
@@ -26,58 +30,28 @@
 	<integer>268</integer>
 	<key>metaData</key>
 	<dict>
-		<key>app/controllers/predicts_controller.rb</key>
+		<key>public/seed_data/lionsmatches.csv</key>
 		<dict>
 			<key>caret</key>
 			<dict>
 				<key>column</key>
-				<integer>30</integer>
+				<integer>44</integer>
 				<key>line</key>
-				<integer>17</integer>
+				<integer>0</integer>
 			</dict>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
 			<key>firstVisibleLine</key>
-			<integer>7</integer>
-		</dict>
-		<key>app/views/users/show.html.erb</key>
-		<dict>
-			<key>caret</key>
-			<dict>
-				<key>column</key>
-				<integer>10</integer>
-				<key>line</key>
-				<integer>25</integer>
-			</dict>
-			<key>firstVisibleColumn</key>
 			<integer>0</integer>
-			<key>firstVisibleLine</key>
-			<integer>9</integer>
-		</dict>
-		<key>app/views/users/show.html.erb copy</key>
-		<dict>
-			<key>caret</key>
-			<dict>
-				<key>column</key>
-				<integer>14</integer>
-				<key>line</key>
-				<integer>52</integer>
-			</dict>
-			<key>firstVisibleColumn</key>
-			<integer>0</integer>
-			<key>firstVisibleLine</key>
-			<integer>42</integer>
 		</dict>
 	</dict>
 	<key>openDocuments</key>
 	<array>
-		<string>app/controllers/predicts_controller.rb</string>
-		<string>app/views/users/show.html.erb</string>
-		<string>app/views/users/show.html.erb copy</string>
+		<string>public/seed_data/lionsmatches.csv</string>
 	</array>
 	<key>showFileHierarchyDrawer</key>
 	<true/>
 	<key>windowFrame</key>
-	<string>{{271, -32}, {975, 433}}</string>
+	<string>{{253, 2}, {946, 433}}</string>
 </dict>
 </plist>

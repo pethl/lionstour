@@ -35,7 +35,7 @@
 			<tr>
 			<td><center><%= Fixture.find(r).match %><br><strong><%= Fixture.find(r).city %></strong>
 			</td> 
-			  <% if date < Date.today %> 
+			  <% if date > Date.today %> 
 			  <td><center><%= best_in_place predict, :homescore, :nil => "Click to enter" %></center></td>
 			  <td><center><%= best_in_place predict, :awayscore, :nil => "Click to enter" %></center></td>
         <% else %>
