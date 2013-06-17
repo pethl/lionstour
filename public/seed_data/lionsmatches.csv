@@ -1,8 +1,8 @@
-hometeam,awayteam,match,location,test,city,score
+hometeam,awayteam,match,location,test,score
 Barbarians,British and Irish Lions,2013-06-01,HongKong,false,8 - 59
 Western Force,British and Irish Lions,2013-06-05,Perth,false,17 - 69
 Queensland Reds,British and Irish Lions,2013-06-08,Brisbane,false,12 - 22
-Combined NSW-Queensland Country,British and Irish Lions,2013-06-11,Newcastle,false,0 - 64
+NSW-Qnsld Country,British and Irish Lions,2013-06-11,Newcastle,false,0 - 64
 NSW Waratahs,British and Irish Lions,2013-06-15,Sydney,false,17 - 47
 ACT Brumbies,British and Irish Lions,2013-06-18,Canberra,false
 Australia,British and Irish Lions,2013-06-22,Brisbane,true,
