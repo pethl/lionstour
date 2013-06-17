@@ -12,6 +12,11 @@ class FixturesController < ApplicationController
      @fixtures_by_date = @fixtures.group_by(&:match)
      @date = params[:date] ? Date.parse(params[:date]) : Date.today
    end
+   
+   def allpredicts
+       @fixtures = Fixture.where(:test => true)
+      
+     end
 
    def import
       Fixture.import(params[:file])

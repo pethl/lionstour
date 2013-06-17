@@ -20,13 +20,12 @@ Lions::Application.routes.draw do
   resources :squads
 
   get 'fixtures/calendar', :to => "fixtures#calendar"
-
+  get 'fixtures/allpredicts', :to => "fixtures#allpredicts"
   
   resources :fixtures do
     collection { post :import }
   end
 
-  get 'users/spooky', :to => "users#spooky"
 
 
   resources :users

@@ -11,13 +11,17 @@ class PredictsController < ApplicationController
   end
   
   def scores
-    @predict = Predict.find(params[:id])
+    @predicts = Predict.find(params[:id])
+    for predict in @predicts
          if @predict.update_attributes(:homescore => (params[:home_predict]),:awayscore => (params[:away_predict]))
           end  
+        end
           @user = User.find(params[:user_id])
    redirect_to user_path(@user)
   end
-
+  
+  
+    
   def lock
      @matchpick = Matchpick.find(params[:matchpick_id])
 
@@ -38,7 +42,7 @@ class PredictsController < ApplicationController
   def show
     @predicts = Predict.where(params[:matchpick_id])
     @matchpick = Matchpick.find(params[:id])
-   @fixtures = Fixture.all
+ 
     
     respond_to do |format|
       format.html # show.html.erb

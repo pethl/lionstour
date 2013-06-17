@@ -1,10 +1,15 @@
+
+<% require 'date' %>
+<% date = DateTime.parse("2013-06-21 00:00:00") %>
+
 <h3>Fixtures 2013</h3>
 
 <ul class="nav nav-tabs">
   <li class="active">
-   	<a href="/fixtures">List View</a>
+   	<a href="/fixtures">List</a>
   </li>
-  <li>	<a href="/fixtures/calendar">Calendar View</a>
+  <li>	<a href="/fixtures/calendar">Calendar</a></li>
+   <li>	<a href="/fixtures/allpredicts">Predictions</a></li>
 </ul><br>
 
 <div class="row-fluid">
@@ -16,14 +21,24 @@
   <tr>
 	<td><%= fixture.match.strftime("%a, %d %B") %><br><%= fixture.location %></td>   
    
- 	<td><strong><%= fixture.hometeam %></strong>
+   <% if  fixture.match > Date.today %>
+     <td><strong><%= fixture.hometeam %></strong>
+				<% else %>
+        <td><h5 class="muted"><%= fixture.hometeam %>
+					<% end %>
+ 	
     	<% unless fixture.test.nil? %>
 		<% if fixture.test == true %>
 		<i>(Test)</i><br>
+		<% if date < Date.today %>
 			<a class="btn btn-mini btn-warning" <%= link_to 'See Predictions', fixture %> </a>
-		
 		<% else %>
-	<% end %><% end %></td>
+			<button type="button" class="btn btn-mini" disabled>View Predictions from 22/6/13</button>
+	<% end %>
+		<% else %>
+	<% end %>
+		<% end %></td>
+	<td><center><%= fixture.score %></center></td>
 
     <td>
 	<% if signed_in? && current_user.admin? %>

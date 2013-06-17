@@ -1,5 +1,5 @@
 class Fixture < ActiveRecord::Base
-  attr_accessible :awayteam, :hometeam, :location, :matchdate, :test, :city, :match
+  attr_accessible :awayteam, :hometeam, :location, :matchdate, :test, :city, :match, :score
   validates_presence_of :awayteam, :hometeam, :location, :match
   
     default_scope order: 'fixtures.matchdate ASC'

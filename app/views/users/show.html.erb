@@ -1,72 +1,64 @@
-	<% require 'date' %>
-	<% date = DateTime.parse("2013-06-21 00:00:00") %>
+
+<% require 'date' %>
+<% date = DateTime.parse("2013-06-21 00:00:00") %>
 	
 <h3>Hello <%= @user.name %></h3><br>
 
 <div class="row">
   <div class="span5 offset1">
 	<h4>Lions Test Match Predictions </h4>
+	<% if date > Date.today %> 
+			<p>	Enter your scores, then take a look around the site.<br>
+			You will be able to see other user predictions from 22nd June.
+			 </p>
+			<% else %>
+			See all other user predictions <%= link_to 'here >>', fixtures_allpredicts_path %><br>
+			<% end %>
+	
 	<div class="well well-small">
-	<% if @user.matchpicks.any? %>
+
+  <table>	
+	<tr>
+	<th></th>
+	<th>Australia</th>
+	<th>Lions</th>
+	<th></th>
+	</tr>
+	
+	<% if @user.matchpicks.where(:reason => "Scores").any? %>
 		<% for matchpick in @user.matchpicks %>
-			<% if matchpick.reason == "Scores"%>
-				
-				<% @predicts = Predict.where(:matchpick_id => matchpick.id) %>
+			
+		<% @predicts = Predict.where(:matchpick_id => matchpick.id).order(:id) %>
+		
 				<% for predict in @predicts do %>
 					<% r = predict.fixture_id %>
-					
-						<table>	
-					<% if Fixture.find(r).test == true %>
 			<tr>
 			<td><center><%= Fixture.find(r).match %><br><strong><%= Fixture.find(r).city %></strong>
-			</td>
-			
-			<%= form_tag scores_predicts_path, method: :put do %>
-			
-			<td>
-			<%= number_field_tag "home_predict", params[:homescore], :value=>predict.homescore, :placeholder => 'Australia' %>
-			<%= hidden_field_tag "id", predict.id %>
-			<%= hidden_field_tag "user_id", @user.id %>
-			</td>
-			
-			<td><%= number_field_tag "away_predict", params[:awayscore], :value=>predict.awayscore, :placeholder => 'Lions'   %></td>
-		
+			</td> 
+			  <% if date < Date.today %> 
+			  <td><center><%= best_in_place predict, :homescore, :nil => "Click to enter" %></center></td>
+			  <td><center><%= best_in_place predict, :awayscore, :nil => "Click to enter" %></center></td>
+        <% else %>
+        <td><center><%= predict.homescore %></center></td>
+			  <td><center><%= predict.awayscore %></center></td>
+        <% end %>
+        <td><% if date < Date.today %> 
+  					<p>	<center><i class="icon-lock"></i><center> </p>
+  					<% else %>
+  					<% end %>
+  						</td>
 
-				<td><% if date < Date.today %> 
-					<p>	<center><i class="icon-lock"></i><center> </p>
-					<% elsif predict.homescore != nil && predict.homescore > 0%>
-						<%= submit_tag "Edit score", class: "btn btn-info btn-large" %>
-						<% else %>
-						<%= submit_tag "Save score", class: "btn btn-success btn-large" %>
-						<% end %><% end %>
-						</td>
-
+        <% end %>
+        <% end %>
+        <% end %>
 					</tr>
 					</table>					
-		<% end %><% end %><% end %><% end %><% end %>
-		</div>
-	
-		<% if  date > Date.today %>
-			<i>Scores will lock at midnight GMT on 21st June<i>
-				<% else %>
-					<% end %> 
+		      </div> 
+		      
+		      	<% if  date > Date.today %>
+        			<i>Scores will lock at midnight GMT on 21st June<i>
+        				<% else %>
+        					<% end %><br></div>
 			</div> <br>
+			
 
-<br><br>
-<% if signed_in? && current_user.admin? %>			
- 		<% if @user.matchpicks.any? %>
-		<% for matchpick in @user.matchpicks %>
-			<% if matchpick.reason == "Team"%>	
-		<% if matchpick.status == "Initial"%>
-		
-	  	<p>Would you like join the Guess the Test Team competition?</p>
-		<p> <strong>Pick your team by June 22nd> ></strong><%= link_to 'Go', matchpick_path(matchpick.id), class: "btn btn-success"  %>
-		</p>
-		<% else %>
-		<p>
-		<i class="icon-lock"></i><br>Team is locked and cannot be edited
-		</p>
-		<p><%= link_to 'View', matchpick_path(matchpick.id), class: "btn btn-info"  %></p>
-		<% end %><% end %><% end %><% end %><% end %>
-<br>
- 

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130517081122) do
+ActiveRecord::Schema.define(:version => 20130617123203) do
 
   create_table "fixtures", :force => true do |t|
     t.string   "location"
@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(:version => 20130517081122) do
     t.datetime "updated_at", :null => false
     t.date     "match"
     t.string   "city"
+    t.string   "score"
   end
 
   create_table "matchpicks", :force => true do |t|

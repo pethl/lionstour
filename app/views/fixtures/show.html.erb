@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h3>Lions Test Match Predictions</h3>
+<h3>Match Details</h3>
 
 <div class="row-fluid">
   <div class="span3 offset1">
@@ -26,27 +26,27 @@
 			<% else %>
 			No
 		<% end %></td>
+		</tr>
+		<tr>
+		<td><b>Result: </b></td>
+		<td> <%= @fixture.score %></td>
 	</tr>
 </table>
 </div>
 </div>
 
 <div class="span6">
-		<% @predicts = Predict.where(:fixture_id => @fixture.id) %>
+		<% @predicts = get_predictions_for_fixture(@fixture.id) %>
+		<% if @predicts.any? %>
 		<% for predict in @predicts do %>
-			<% @matchpicks = Matchpick.where(:id => predict.matchpick_id) %>
-			<% if @matchpicks.any? %>
-			<% for matchpick in @matchpicks do %>
-			<% u = matchpick.user_id %>
-			<% end %>		<% end %>
 			
 			<table>	
 			<tr>
-				<td><%= User.find(u).name %></td>
+				<td> <%= get_user_name_for_prediction(predict.matchpick_id) %></td>
 					<td><center><%= predict.homescore %> : 	<%= predict.awayscore %></center></td>
 			</tr>
 			</table>
-			<% end %>
+			<% end %><% end %>			
 			<br>
 <%= link_to 'Back to fixtures', fixtures_path %>
 </div>

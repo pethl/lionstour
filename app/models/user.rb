@@ -38,10 +38,10 @@ class User < ActiveRecord::Base
     u = self.id
       m = Matchpick.new(:status => "Initial", :reason => "Scores", :user_id => u)
         m.save
-    @fixtureids = Fixture.pluck(:id)
+    @fixtureids = Fixture.where(:test => true).collect {|r| r.id}
     
     i = 0
-      x = Fixture.count
+      x = @fixtureids.count
      
       while i < x do
           s = Predict.new(:matchpick_id => m.id, :fixture_id => @fixtureids[i])

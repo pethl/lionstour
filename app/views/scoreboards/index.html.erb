@@ -1,3 +1,7 @@
+
+<% require 'date' %>
+<% date = DateTime.parse("2013-06-22 00:00:00") %>
+
 <h3>Scoreboard</h3>
 
 <ul class="nav nav-tabs">
@@ -10,6 +14,12 @@
 
 <div class="row-fluid">
   <div class="span6 offset1">
+  
+  <% if date > Date.today %> 
+			<p>No scores available until after first test</p><br><br>
+			<% else %>
+			<% end %>
+  
 <table>
   <tr>
     <th>Competitor</th>
