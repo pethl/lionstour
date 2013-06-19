@@ -36,27 +36,23 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
   end
   
-  # GET /users/1/edit
-   def spooky
-     @users = User.all
-  end
+  
 
   # POST /users
   # POST /users.json
   def create
     @user = User.new(params[:user])
-    
-     respond_to do |format|
+
         if @user.save
           sign_in @user
             # Tell the UserMailer to send a welcome Email after save
-            UserMailer.welcome_email(@user).deliver
+            # UserMailer.welcome_email(@user).deliver
                   
           redirect_to @user, notice: "Thanks for creating your account."
         else
           render 'new'
         end
-      end
+    
       end
     
 

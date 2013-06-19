@@ -1,0 +1,57 @@
+<h3>Squad Performance</h3>
+
+<ul class="nav nav-tabs">
+  <li>
+   	<a href="/squad_performances">Full Squad</a>
+  </li>
+  <li class="active">	<a href="/squad_performances/played">Playing Squad</a></li>
+</ul><br>
+
+
+<% if @squad_performances.any? %>
+<% @squad_performances_fixture.each do |fixture_id, squad_performances| %>
+<h3>	<% m = fixture_id %>	
+		<%= Fixture.find(m).full_fixture %> (<%= m %>)
+	</h3>	
+	<%= form_tag onfield_squad_performances_path, method: :put do %>
+<table class="table table-condensed">
+	  <tr>
+
+    <th>Player Name</th>
+
+	<th><center>Play</th>
+    <th><center>Tries</th>
+    <th><center>Drop goals</th>
+    <th><center>Total</center></th>
+    <th></th>
+  </tr>
+<% squad_performances.each do |squad_performance| %>
+    <% unless squad_performance.play == false %>
+  <tr>
+   
+    <td><% r = squad_performance.squad_id %><%= r %>	
+		<%= Squad.find(r).name %></td>
+
+		<td> <center><%= squad_performance.play %>
+	</center></td>
+	<td><center><%= best_in_place squad_performance, :tries, :nil => "Click to enter" %></center></td>
+	<td><center><%= best_in_place squad_performance, :dropgoals, :nil => "Click to enter" %></center></td>
+
+    <td><center><%= squad_performance.total %></center></td>
+    <td><b><%= link_to 'E', edit_squad_performance_path(squad_performance) %> :
+   		<%= link_to 'D', squad_performance, method: :delete, data: { confirm: 'Are you sure?' } %></b></td>
+   		<% end %>
+   			<% end %>
+  </tr>
+<% end %>
+</table>
+
+<% end %>
+<% else %>
+<% end %>
+
+
+<br />
+
+
+
