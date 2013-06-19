@@ -1,3 +1,8 @@
+
+<% require 'date' %>
+<% date = DateTime.parse("2013-06-21 00:00:00") %>
+
+
 <p id="notice"><%= notice %></p>
 
 <h3>Match Details</h3>
@@ -36,6 +41,7 @@
 </div>
 
 <div class="span6">
+	<% if date < Date.today %>
 		<% @predicts = get_predictions_for_fixture(@fixture.id) %>
 		<% if @predicts.any? %>
 		<% for predict in @predicts do %>
@@ -46,7 +52,7 @@
 					<td><center><%= predict.homescore %> : 	<%= predict.awayscore %></center></td>
 			</tr>
 			</table>
-			<% end %><% end %>			
+			<% end %><% end %>	<% end %>		
 			<br>
 <%= link_to 'Back to fixtures', fixtures_path %>
 </div>
