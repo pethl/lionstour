@@ -1,4 +1,6 @@
 class SquadsController < ApplicationController
+  respond_to :html, :json
+  
   # GET /squads
   # GET /squads.json
   def index

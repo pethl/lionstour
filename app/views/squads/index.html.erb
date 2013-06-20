@@ -29,9 +29,9 @@
  <td><center><% if signed_in? && current_user.admin? %>	
 	<%= link_to 'E', edit_squad_path(squad) %> : 
 	<%= link_to 'D', squad, method: :delete, data: { confirm: 'Are you sure?' } %></center></td>
-	<td><center><%= best_in_place squad, :test1, :type => :checkbox %></td>
-	<td><center><%= best_in_place squad, :test2, :type => :checkbox %></td>
-	<td><center><%= best_in_place squad, :test3, :type => :checkbox %></td>
+	<td><center><%= best_in_place squad, :test1, :type => :checkbox, collection: %w[No Yes] %></td>
+	<td><center><%= best_in_place squad, :test2, :type => :checkbox, collection: %w[No Yes] %></td>
+	<td><center><%= best_in_place squad, :test3, :type => :checkbox, collection: %w[No Yes] %></td>
 	<% else %><% end %>
   </tr>
 <% end %>
