@@ -2,8 +2,14 @@
 <div class="jumbotron">
   <h1>2013 Lions Tour</h1>
   <p class="lead">yet another predictascore</p>
+  
+  	<% if signed_in? %>
+  	  <img src="/images/lions_logo.png">
+  	  <h4>Hello <strong><%= current_user.name %></strong>, could this be your lucky year? </h4>
+  	  <% else %>
   <a class="btn btn-large btn-success" <%= link_to 'Sign up', new_user_path %> </a> or 
 	<a class="btn btn-large btn-info" <%= link_to 'Sign in', signin_path %> </a>
+	
 </div>
 
 <hr>
@@ -26,7 +32,7 @@
 
   </div>
 </div>
-
+<% end %>
 <hr>
 
 
