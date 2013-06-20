@@ -7,8 +7,8 @@
   <tr>
     <th>Name</th>
     <th>Email</th>
-    <th><center>Scores</center></th>
-    <th><center>Team</center></th>   
+    <th><center>Created</center></th>
+
 	<th>Admin</th>
 	<th></th>
   </tr>
@@ -17,16 +17,7 @@
   <tr>
     <td><%= link_to user.name, user %> </td>
     <td><%= user.email %></td>
-	<td><% user.matchpicks.each do |matchpick| %>
-		<% if matchpick.reason == "Scores" %>
-		<center><%= link_to matchpick.status, predict_path(matchpick.id) %>	</center>
-			<% end %><% end %>
-			</td>
-		<td>	<% user.matchpicks.each do |matchpick| %>
-				<% if matchpick.reason == "Team" %>
-				<center><%= link_to matchpick.status, predict_path(matchpick.id) %></center>
-					<% end %><% end %>
-					</td>
+   			 <td><%= user.created_at %></td>
 				   <td><%= user.admin %></td>
 	<td><%= link_to 'edit', edit_user_path(user) %> | <%= link_to 'destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>

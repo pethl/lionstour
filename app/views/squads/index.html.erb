@@ -1,12 +1,24 @@
-<h3>Squad</h3>
+<h3>Squad 2013</h3>
+
+<ul class="nav nav-tabs">
+  <li class="active">
+   	<a href="/squads">Full Squad</a>
+  </li>
+  <li>	<a href="/squads/test1">1st Test</a></li>
+   <li>	<a href="/squads/test2">2nd Test</a></li>
+      <li>	<a href="/squads/test2">3rd Test</a></li>
+</ul><br>
+
 <div class="row-fluid">
   <div class="span6 offset1">
 <% @squad_by_country.each do |country, squads| %>
 <table class="table">
   <tr>
-    <th><strong>Name</strong></th>
-    <th><strong>Stats</strong></th>
-    <th><strong></strong></th>
+    <th>Name</th>
+    <th><center>Stats</center></th>
+    <% if signed_in? && current_user.admin? %>
+    <th><center>Admin</center></th> <th><center>1st</center></th>  <th><center>2nd</center></th>   <th><center>3rd</center></th>
+    <% end %>
   </tr>
 <br><tr><h4 class="muted"><%= country %></h4></tr>
 <% squads.each do |squad| %>
@@ -16,7 +28,11 @@
    
  <td><center><% if signed_in? && current_user.admin? %>	
 	<%= link_to 'E', edit_squad_path(squad) %> : 
-	<%= link_to 'D', squad, method: :delete, data: { confirm: 'Are you sure?' } %><% else %><% end %></center></td>
+	<%= link_to 'D', squad, method: :delete, data: { confirm: 'Are you sure?' } %></center></td>
+	<td><center><%= best_in_place squad, :test1, :type => :checkbox %></td>
+	<td><center><%= best_in_place squad, :test2, :type => :checkbox %></td>
+	<td><center><%= best_in_place squad, :test3, :type => :checkbox %></td>
+	<% else %><% end %>
   </tr>
 <% end %>
 </table>

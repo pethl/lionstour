@@ -11,6 +11,18 @@ class SquadsController < ApplicationController
       format.json { render json: @squads }
     end
   end
+  
+  def test1
+    @squads_test1 = Squad.where(:test1 => true)
+  end
+  
+  def test2
+    @squads_test2 = Squad.where(:test2 => true)
+  end
+  
+  def test3
+    @squads_test3 = Squad.where(:test3 => true)
+  end
 
   def import
       Squad.import(params[:file])

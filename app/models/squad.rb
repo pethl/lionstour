@@ -1,5 +1,5 @@
 class Squad < ActiveRecord::Base
-  attr_accessible :age, :country, :group, :height, :name, :position, :position_strg, :weight
+  attr_accessible :age, :country, :group, :height, :name, :position, :position_strg, :weight, :test1, :test2, :test3
   
    validates_presence_of :name
    validates :group, presence: true

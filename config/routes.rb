@@ -16,7 +16,9 @@ Lions::Application.routes.draw do
        collection { post :generate }
    end
 
-  
+    get 'squads/test1', :to => "squads#test1"
+        get 'squads/test2', :to => "squads#test2"
+            get 'squads/test3', :to => "squads#test3"
   resources :squads
 
   get 'fixtures/calendar', :to => "fixtures#calendar"

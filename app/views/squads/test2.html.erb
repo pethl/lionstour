@@ -1,0 +1,31 @@
+<h3>Squad 2013</h3>
+
+<ul class="nav nav-tabs">
+  <li>
+   	<a href="/squads">Full Squad</a>
+  </li>
+  <li>	<a href="/squads/test1">1st Test</a></li>
+   <li class="active">	<a href="/squads/test2">2nd Test</a></li>
+      <li>	<a href="/squads/test3">3rd Test</a></li>
+</ul><br>
+
+<div class="row-fluid">
+  <div class="span6 offset1">
+  <% if @squads_test2.nil? %>
+    Test Squad not yet announced<br>
+    <% else %>
+
+  
+<% @squads_test2.each do |squad| %>
+<ul>
+    <li><%= squad.name %>  --  <%= squad.country %></li>
+
+   </ul>
+ 
+  </tr>
+<% end %>
+</table>
+<% end %>
+</div></div>
+<br />
+
