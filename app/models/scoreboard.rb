@@ -4,7 +4,7 @@ class Scoreboard < ActiveRecord::Base
   validates :fixture_id, presence: true
   validates :user_id, presence: true
   
-  def self.generate(fixture_id)
+  def self.generate_full(fixture_id)
     
       @users = User.pluck(:id)
       t = 0
@@ -22,6 +22,15 @@ class Scoreboard < ActiveRecord::Base
           q.save
       end
     end
+    def self.generate(fixture_id)
 
+        @users = User.pluck(:id)
+        t = 0
+        @users.each do |user|
+
+            q = Scoreboard.new(:fixture_id => fixture_id, :user_id => user, :matchscore => 0)
+            q.save
+        end
+      end
   
 end

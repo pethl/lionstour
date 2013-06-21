@@ -1,6 +1,6 @@
 
 <% require 'date' %>
-<% date = DateTime.parse("2013-06-22 00:00:00") %>
+<% date = DateTime.parse("2013-06-21 00:00:00") %>
 
 <h3>Scoreboard</h3>
 
@@ -18,34 +18,32 @@
   <% if date > Date.today %> 
 			<p>No scores available until after first test</p><br><br>
 			<% else %>
+			
+			<table>
+        <tr>
+          <th align='left' >Competitor</th>
+          <th><center>Total</center></th>
+        </tr>
+
+        <% @users = User.all %>
+         <% @users.each do |user| %>
+
+        <tr>
+          <td><%= user.name %>	
+      	  </td>
+
+          <td><center>
+          <%= Scoreboard.where(:user_id => user.id).pluck(:matchscore).sum %>
+              <% end %>
+              </center></td>
+
+
+        </tr>
+      </table>
+      </div></div>
 			<% end %>
-  
-<table>
-  <tr>
-    <th>Competitor</th>
-    <th><center>Total</center></th>
-  </tr>
-<% @scoreboards_user.each do |user_id, scoreboards| %>
+ 
 
-  <tr>
-    <td><% m = user_id %>	
-		<%= User.find(m).name %> 
-	</td>
-
-    <td><center>
-	<% if scoreboards.any? %>
-	<% i = 0 %>
-	<% scoreboards.group_by { |t| t.user_id } %>
-	<% scoreboards.each do |scoreboard| %>
-	<% i += scoreboard.matchscore %>
-	<% end %>
-	<%= i %>
-	<% end %>
-	</center></td>
-  </tr>
-<% end %>
-</table>
-</div></div>
 <% if signed_in? && current_user.admin? %>	
 <br />
 <div class="btn-group btn-group-vertical">

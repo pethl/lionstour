@@ -45,4 +45,28 @@
 </div>
 </div>
 </div>
+<% if signed_in? && current_user.admin? %>
+  <div class="row-fluid">
+    <div class="span3 offset1">
+   <% @fixtures.each do |fixture| %>
+      <strong><%= fixture.match.strftime("%a, %d %B") %> in <%= fixture.location %></strong><br>
+
+        	<% @predicts = get_predictions_for_fixture(fixture.id) %>
+      		<% for predict in @predicts do %>
+      		  <table>
+      		   <tr>
+                <td>
+      			      <%= get_user_name_for_prediction(predict.matchpick_id) %>
+      			    </td>
+      			    <td>
+      			      <center><%= predict.homescore %> - <%= predict.awayscore %></center>
+      			    </td>
+      			</tr>
+      			</table>
+      			<% end %>
+  <br><br>    			
+  	<% end %>
+  	<% end %>
+  	</div></div>
+
 

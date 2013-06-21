@@ -20,6 +20,7 @@
     <th><center>Matchscore</center></th>
     <th>Comments</th>
     <th></th>
+    <th></th>
   </tr>
 
 <% scoreboards.each do |scoreboard| %>
@@ -29,9 +30,14 @@
 
     <td><center><%= scoreboard.matchscore %></center></td>
     <td><%= scoreboard.comments %></td>
+    
+    <% if signed_in? && current_user.admin? %>
+    <td><center><%= best_in_place scoreboard, :matchscore, :nil => "x" %></center></td>
     <td><b><%= link_to 'S', scoreboard %> : 
     <%= link_to 'E', edit_scoreboard_path(scoreboard) %>
     : <%= link_to 'D', scoreboard, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+ 
+    <% end %>
   </tr>
 <% end %>
 </table>
