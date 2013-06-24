@@ -11,6 +11,8 @@
 
 <% @scoreboards_user.each do |user_id, scoreboards| %>
 <h3>	<% m = user_id %>	
+	<% if User.find(m).name == "pethl" %>
+	  <% else %>
 		<%= User.find(m).name %> 
 	</h3>
 
@@ -37,7 +39,7 @@
     <%= link_to 'E', edit_scoreboard_path(scoreboard) %>
     : <%= link_to 'D', scoreboard, method: :delete, data: { confirm: 'Are you sure?' } %></td>
  
-    <% end %>
+    <% end %><% end %>
   </tr>
 <% end %>
 </table>
