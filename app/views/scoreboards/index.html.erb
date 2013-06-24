@@ -10,51 +10,48 @@
    	<a href="/scoreboards/summary">Scores by Match</a>
   </li>
 </ul>
-  <br>
+  
 
 <div class="row-fluid">
   <div class="span6 offset1">
   
   <% if date > Date.today %> 
-			<p>No scores available until after first test</p><br><br>
+			<p>No scores available until after first test</p><br>
 			<% else %>
-			
+        
 			<table>
         <tr>
           <th align='left' >Competitor</th>
           <th><center>Total</center></th>
         </tr>
-
-        <% @users = User.all %>
-         <% @users.each do |user| %>
-
         <tr>
-          <td><%= user.name %>	
-      	  </td>
+        
+         <% sz = @scoreboards.size %>
+         <% if @scoreboards.any? %>
+         <% for scoreboard in @scoreboards %> 
+          <% sz = sz-1 %>
+          <% @record = @scoreboards[sz] %>
 
-          <td><center>
-          <%= Scoreboard.where(:user_id => user.id).pluck(:matchscore).sum %>
-              <% end %>
-              </center></td>
-
-
-        </tr>
+          <td><%= User.find(@record.second).name  %></td>
+          <td><center><%= @record.first  %></center></td>
+ </tr>
+  <% end %>  <% end %>
+       
       </table>
       </div></div>
-			<% end %>
+<% end %>
  
-
 <% if signed_in? && current_user.admin? %>	
 <br />
 <div class="btn-group btn-group-vertical">
-  <button class="btn btn-large"><%= link_to 'New Scoreboard', new_scoreboard_path, class: "btn btn-primary" %></button>
-  <button class="btn">	<%= form_tag generate_scoreboards_path do %>
+  <button class="btn btn-large"><%= link_to 'New Scoreboard', new_scoreboard_path, class: "btn btn-primary" %>
+  </button>
+  
+  <button class="btn">	
+  <%= form_tag generate_scoreboards_path do %>
 		<%= text_field_tag :fixture_id %>
 		<%= submit_tag "Generate" %>
-
-	<% end %></button>
-	<% end %>
-
-
-
-
+  <% end %>
+  </button>
+	
+<% end %>

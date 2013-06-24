@@ -3,9 +3,7 @@ class ScoreboardsController < ApplicationController
   # GET /scoreboards.json
   def index
    
-    @scoreboards = Scoreboard.order("user_id ASC")
-    @scoreboards_user = @scoreboards.group_by { |t| t.user_id } 
-        @fixtures = Fixture.all
+    @scoreboards = Scoreboard.sum(:matchscore, :group => "user_id").invert.sort
 
     respond_to do |format|
       format.html # index.html.erb
