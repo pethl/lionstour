@@ -3,7 +3,10 @@ class ScoreboardsController < ApplicationController
   # GET /scoreboards.json
   def index
    
-    @scoreboards = Scoreboard.sum(:matchscore, :group => "user_id").invert.sort
+  #  @scoreboards = Scoreboard.sum(:matchscore, :group => "user_id")
+  #  @scoreboards = @scoreboards.invert.sort
+
+    @scoreboards = get_records.sort_by{ |k, v| v }
 
     respond_to do |format|
       format.html # index.html.erb
@@ -92,4 +95,14 @@ class ScoreboardsController < ApplicationController
       format.json { head :no_content }
     end
   end
+  
+  private
+    def get_records
+      users = User.all
+      scores = Hash.new
+      for user in users
+        scores[user.id] = Scoreboard.where(:user_id => user.id).sum(:matchscore)
+      end
+      return scores
+    end
 end

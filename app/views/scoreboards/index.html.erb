@@ -18,26 +18,27 @@
   <% if date > Date.today %> 
 			<p>No scores available until after first test</p><br>
 			<% else %>
-        
-			<table>
+      	<table>
         <tr>
           <th align='left' >Competitor</th>
           <th><center>Total</center></th>
         </tr>
+        <tr><td>__________</td><td><center>_____</center></td></tr>
         <tr>
-        
+
          <% sz = @scoreboards.size %>
          <% if @scoreboards.any? %>
          <% for scoreboard in @scoreboards %> 
           <% sz = sz-1 %>
           <% @record = @scoreboards[sz] %>
 
-          <td><%= User.find(@record.second).name  %></td>
-          <td><center><%= @record.first  %></center></td>
- </tr>
-  <% end %>  <% end %>
-       
+          <td><%= User.find(@record.first).name  %></td>
+          <td><center><%= @record.second  %></center></td>
+    </tr>
+    <% end %>  <% end %>
+
       </table>
+		
       </div></div>
 <% end %>
  
