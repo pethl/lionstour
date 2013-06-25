@@ -10,7 +10,7 @@ Lions::Application.routes.draw do
     collection { post :generate }
   end
 
-
+  get 'squad_performances/played', :to => "squad_performances#played"
   resources :squad_performances do
      collection { put :onfield };
        collection { post :generate }

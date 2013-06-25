@@ -12,6 +12,17 @@ class SquadPerformancesController < ApplicationController
     end
   end
 
+  def played
+     @squad_performances = SquadPerformance.order("fixture_id ASC")
+     @squad_performances_fixture = @squad_performances.group_by { |t| t.fixture_id } 
+         @fixtures = Fixture.all
+
+     respond_to do |format|
+       format.html # index.html.erb
+       format.json { render json: @squad_performances }
+     end
+   end
+
   # GET /squad_performances/1
   # GET /squad_performances/1.json
   def show
