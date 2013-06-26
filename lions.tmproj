@@ -2,16 +2,12 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>currentDocument</key>
-	<string>public/seed_data/lionsmatches.csv</string>
 	<key>documents</key>
 	<array>
 		<dict>
 			<key>children</key>
 			<array>
 				<dict>
-					<key>expanded</key>
-					<true/>
 					<key>name</key>
 					<string>Lions</string>
 					<key>regexFolderFilter</key>
@@ -20,8 +16,6 @@
 					<string></string>
 				</dict>
 			</array>
-			<key>expanded</key>
-			<true/>
 			<key>name</key>
 			<string>untitled group</string>
 		</dict>
@@ -29,29 +23,10 @@
 	<key>fileHierarchyDrawerWidth</key>
 	<integer>268</integer>
 	<key>metaData</key>
-	<dict>
-		<key>public/seed_data/lionsmatches.csv</key>
-		<dict>
-			<key>caret</key>
-			<dict>
-				<key>column</key>
-				<integer>44</integer>
-				<key>line</key>
-				<integer>0</integer>
-			</dict>
-			<key>firstVisibleColumn</key>
-			<integer>0</integer>
-			<key>firstVisibleLine</key>
-			<integer>0</integer>
-		</dict>
-	</dict>
-	<key>openDocuments</key>
-	<array>
-		<string>public/seed_data/lionsmatches.csv</string>
-	</array>
+	<dict/>
 	<key>showFileHierarchyDrawer</key>
 	<true/>
 	<key>windowFrame</key>
-	<string>{{253, 2}, {946, 433}}</string>
+	<string>{{285, 4}, {946, 433}}</string>
 </dict>
 </plist>

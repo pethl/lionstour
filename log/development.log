@@ -1,2 +1,128 @@
 Connecting to database specified by database.yml
 Connecting to database specified by database.yml
+
+
+Started GET "/" for 127.0.0.1 at 2013-06-26 08:42:33 +0100
+Connecting to database specified by database.yml
+Processing by StaticPagesController#home as HTML
+  [1m[36mUser Load (83.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."remember_token" = 'KgGoAIrx-4Fy1uK0OrrBYg' LIMIT 1[0m
+  Rendered static_pages/home.html.erb within layouts/application (699.5ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."remember_token" = 'KgGoAIrx-4Fy1uK0OrrBYg' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."remember_token" = 'KgGoAIrx-4Fy1uK0OrrBYg' LIMIT 1[0m
+  Rendered layouts/_header.html.erb (2.0ms)
+Completed 200 OK in 779ms (Views: 199.3ms | ActiveRecord: 579.2ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2013-06-26 08:42:35 +0100
+Served asset /application.js - 304 Not Modified (403ms)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2013-06-26 08:42:36 +0100
+Served asset /application.css - 304 Not Modified (275ms)
+
+
+Started GET "/fixtures" for 127.0.0.1 at 2013-06-26 08:42:40 +0100
+Processing by FixturesController#index as HTML
+  [1m[35mFixture Load (56.7ms)[0m  SELECT "fixtures".* FROM "fixtures" ORDER BY fixtures.matchdate ASC, id ASC
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."remember_token" = 'KgGoAIrx-4Fy1uK0OrrBYg' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."remember_token" = 'KgGoAIrx-4Fy1uK0OrrBYg' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."remember_token" = 'KgGoAIrx-4Fy1uK0OrrBYg' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."remember_token" = 'KgGoAIrx-4Fy1uK0OrrBYg' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."remember_token" = 'KgGoAIrx-4Fy1uK0OrrBYg' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."remember_token" = 'KgGoAIrx-4Fy1uK0OrrBYg' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."remember_token" = 'KgGoAIrx-4Fy1uK0OrrBYg' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."remember_token" = 'KgGoAIrx-4Fy1uK0OrrBYg' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."remember_token" = 'KgGoAIrx-4Fy1uK0OrrBYg' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."remember_token" = 'KgGoAIrx-4Fy1uK0OrrBYg' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."remember_token" = 'KgGoAIrx-4Fy1uK0OrrBYg' LIMIT 1[0m
+  Rendered fixtures/index.html.erb within layouts/application (15.4ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."remember_token" = 'KgGoAIrx-4Fy1uK0OrrBYg' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."remember_token" = 'KgGoAIrx-4Fy1uK0OrrBYg' LIMIT 1[0m
+  Rendered layouts/_header.html.erb (1.0ms)
+Completed 200 OK in 137ms (Views: 36.7ms | ActiveRecord: 85.4ms)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2013-06-26 08:42:41 +0100
+Served asset /application.css - 304 Not Modified (38ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2013-06-26 08:42:41 +0100
+Served asset /application.js - 304 Not Modified (3ms)
+
+
+Started GET "/squads" for 127.0.0.1 at 2013-06-26 08:42:43 +0100
+Processing by SquadsController#index as HTML
+  [1m[35mSquad Load (14.3ms)[0m  SELECT "squads".* FROM "squads" ORDER BY squads.position ASC
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."remember_token" = 'KgGoAIrx-4Fy1uK0OrrBYg' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."remember_token" = 'KgGoAIrx-4Fy1uK0OrrBYg' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."remember_token" = 'KgGoAIrx-4Fy1uK0OrrBYg' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."remember_token" = 'KgGoAIrx-4Fy1uK0OrrBYg' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."remember_token" = 'KgGoAIrx-4Fy1uK0OrrBYg' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."remember_token" = 'KgGoAIrx-4Fy1uK0OrrBYg' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."remember_token" = 'KgGoAIrx-4Fy1uK0OrrBYg' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."remember_token" = 'KgGoAIrx-4Fy1uK0OrrBYg' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."remember_token" = 'KgGoAIrx-4Fy1uK0OrrBYg' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."remember_token" = 'KgGoAIrx-4Fy1uK0OrrBYg' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."remember_token" = 'KgGoAIrx-4Fy1uK0OrrBYg' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."remember_token" = 'KgGoAIrx-4Fy1uK0OrrBYg' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."remember_token" = 'KgGoAIrx-4Fy1uK0OrrBYg' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."remember_token" = 'KgGoAIrx-4Fy1uK0OrrBYg' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."remember_token" = 'KgGoAIrx-4Fy1uK0OrrBYg' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."remember_token" = 'KgGoAIrx-4Fy1uK0OrrBYg' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."remember_token" = 'KgGoAIrx-4Fy1uK0OrrBYg' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."remember_token" = 'KgGoAIrx-4Fy1uK0OrrBYg' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."remember_token" = 'KgGoAIrx-4Fy1uK0OrrBYg' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."remember_token" = 'KgGoAIrx-4Fy1uK0OrrBYg' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."remember_token" = 'KgGoAIrx-4Fy1uK0OrrBYg' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."remember_token" = 'KgGoAIrx-4Fy1uK0OrrBYg' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."remember_token" = 'KgGoAIrx-4Fy1uK0OrrBYg' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."remember_token" = 'KgGoAIrx-4Fy1uK0OrrBYg' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."remember_token" = 'KgGoAIrx-4Fy1uK0OrrBYg' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."remember_token" = 'KgGoAIrx-4Fy1uK0OrrBYg' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."remember_token" = 'KgGoAIrx-4Fy1uK0OrrBYg' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."remember_token" = 'KgGoAIrx-4Fy1uK0OrrBYg' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."remember_token" = 'KgGoAIrx-4Fy1uK0OrrBYg' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."remember_token" = 'KgGoAIrx-4Fy1uK0OrrBYg' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."remember_token" = 'KgGoAIrx-4Fy1uK0OrrBYg' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."remember_token" = 'KgGoAIrx-4Fy1uK0OrrBYg' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."remember_token" = 'KgGoAIrx-4Fy1uK0OrrBYg' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."remember_token" = 'KgGoAIrx-4Fy1uK0OrrBYg' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."remember_token" = 'KgGoAIrx-4Fy1uK0OrrBYg' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."remember_token" = 'KgGoAIrx-4Fy1uK0OrrBYg' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."remember_token" = 'KgGoAIrx-4Fy1uK0OrrBYg' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."remember_token" = 'KgGoAIrx-4Fy1uK0OrrBYg' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."remember_token" = 'KgGoAIrx-4Fy1uK0OrrBYg' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."remember_token" = 'KgGoAIrx-4Fy1uK0OrrBYg' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."remember_token" = 'KgGoAIrx-4Fy1uK0OrrBYg' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."remember_token" = 'KgGoAIrx-4Fy1uK0OrrBYg' LIMIT 1
+  Rendered squads/index.html.erb within layouts/application (21.3ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."remember_token" = 'KgGoAIrx-4Fy1uK0OrrBYg' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."remember_token" = 'KgGoAIrx-4Fy1uK0OrrBYg' LIMIT 1
+  Rendered layouts/_header.html.erb (1.0ms)
+Completed 200 OK in 89ms (Views: 39.9ms | ActiveRecord: 30.6ms)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2013-06-26 08:42:43 +0100
+Served asset /application.css - 304 Not Modified (5ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2013-06-26 08:42:43 +0100
+Served asset /application.js - 304 Not Modified (3ms)
+
+
+Started GET "/home.html" for 127.0.0.1 at 2013-06-26 08:42:44 +0100
+Processing by StaticPagesController#home as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."remember_token" = 'KgGoAIrx-4Fy1uK0OrrBYg' LIMIT 1[0m
+  Rendered static_pages/home.html.erb within layouts/application (2.0ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."remember_token" = 'KgGoAIrx-4Fy1uK0OrrBYg' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."remember_token" = 'KgGoAIrx-4Fy1uK0OrrBYg' LIMIT 1[0m
+  Rendered layouts/_header.html.erb (1.1ms)
+Completed 200 OK in 7ms (Views: 6.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2013-06-26 08:42:44 +0100
+Served asset /application.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2013-06-26 08:42:44 +0100
+Served asset /application.css - 304 Not Modified (6ms)
