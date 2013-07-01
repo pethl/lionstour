@@ -746,3 +746,1188 @@ Served asset /application.js - 304 Not Modified (13ms)
 
 Started GET "/assets/application.css" for 127.0.0.1 at 2013-07-01 12:05:37 +0100
 Served asset /application.css - 304 Not Modified (5ms)
+
+
+Started GET "/scoreboards/summary" for 127.0.0.1 at 2013-07-01 12:55:49 +0100
+Processing by ScoreboardsController#summary as HTML
+  [1m[36mScoreboard Load (0.6ms)[0m  [1mSELECT "scoreboards".* FROM "scoreboards" ORDER BY user_id ASC[0m
+  [1m[35mFixture Load (0.8ms)[0m  SELECT "fixtures".* FROM "fixtures" ORDER BY fixtures.matchdate ASC
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  Rendered scoreboards/summary.html.erb within layouts/application (119.1ms)
+Completed 500 Internal Server Error in 152ms
+
+ActionView::Template::Error (undefined method `order' for #<Array:0x007fac597e9840>):
+    24:     <th></th>
+    25:     <th></th>
+    26:   </tr>
+    27: <% scoreboards = scoreboards.order("fixture_id")%>
+    28: <% scoreboards.each do |scoreboard| %>
+    29:   <tr>
+    30:     <td><% f = scoreboard.fixture_id %>	
+  app/views/scoreboards/summary.html.erb:27:in `block in _app_views_scoreboards_summary_html_erb__3864406847568180308_70189106183000'
+  app/views/scoreboards/summary.html.erb:12:in `each'
+  app/views/scoreboards/summary.html.erb:12:in `_app_views_scoreboards_summary_html_erb__3864406847568180308_70189106183000'
+
+
+  Rendered /Users/lisapethick/.rvm/gems/ruby-1.9.2-p320/gems/actionpack-3.2.12/lib/action_dispatch/middleware/templates/rescues/_trace.erb (4.2ms)
+  Rendered /Users/lisapethick/.rvm/gems/ruby-1.9.2-p320/gems/actionpack-3.2.12/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.8ms)
+  Rendered /Users/lisapethick/.rvm/gems/ruby-1.9.2-p320/gems/actionpack-3.2.12/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (32.7ms)
+
+
+Started GET "/scoreboards/summary" for 127.0.0.1 at 2013-07-01 12:56:00 +0100
+Processing by ScoreboardsController#summary as HTML
+  [1m[35mScoreboard Load (0.5ms)[0m  SELECT "scoreboards".* FROM "scoreboards" ORDER BY user_id ASC
+  [1m[36mFixture Load (0.4ms)[0m  [1mSELECT "fixtures".* FROM "fixtures" ORDER BY fixtures.matchdate ASC[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  Rendered scoreboards/summary.html.erb within layouts/application (4.5ms)
+Completed 500 Internal Server Error in 10ms
+
+ActionView::Template::Error (wrong number of arguments(1 for 0)):
+    24:     <th></th>
+    25:     <th></th>
+    26:   </tr>
+    27: <% scoreboards = scoreboards.sort("fixture_id")%>
+    28: <% scoreboards.each do |scoreboard| %>
+    29:   <tr>
+    30:     <td><% f = scoreboard.fixture_id %>	
+  app/views/scoreboards/summary.html.erb:27:in `sort'
+  app/views/scoreboards/summary.html.erb:27:in `block in _app_views_scoreboards_summary_html_erb__3864406847568180308_70189101903420'
+  app/views/scoreboards/summary.html.erb:12:in `each'
+  app/views/scoreboards/summary.html.erb:12:in `_app_views_scoreboards_summary_html_erb__3864406847568180308_70189101903420'
+
+
+  Rendered /Users/lisapethick/.rvm/gems/ruby-1.9.2-p320/gems/actionpack-3.2.12/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.5ms)
+  Rendered /Users/lisapethick/.rvm/gems/ruby-1.9.2-p320/gems/actionpack-3.2.12/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.3ms)
+  Rendered /Users/lisapethick/.rvm/gems/ruby-1.9.2-p320/gems/actionpack-3.2.12/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (10.3ms)
+
+
+Started GET "/scoreboards/summary" for 127.0.0.1 at 2013-07-01 12:58:27 +0100
+Processing by ScoreboardsController#summary as HTML
+  [1m[36mScoreboard Load (25.3ms)[0m  [1mSELECT "scoreboards".* FROM "scoreboards" ORDER BY user_id ASC[0m
+  [1m[35mFixture Load (1.3ms)[0m  SELECT "fixtures".* FROM "fixtures" ORDER BY fixtures.matchdate ASC
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  Rendered scoreboards/summary.html.erb within layouts/application (35.0ms)
+Completed 500 Internal Server Error in 93ms
+
+ActionView::Template::Error (undefined method `order_by' for #<Array:0x007fac58aa9ba8>):
+    24:     <th></th>
+    25:     <th></th>
+    26:   </tr>
+    27: <% scoreboards = scoreboards.order_by("fixture_id")%>
+    28: <% scoreboards.each do |scoreboard| %>
+    29:   <tr>
+    30:     <td><% f = scoreboard.fixture_id %>	
+  app/views/scoreboards/summary.html.erb:27:in `block in _app_views_scoreboards_summary_html_erb__3864406847568180308_70189099254520'
+  app/views/scoreboards/summary.html.erb:12:in `each'
+  app/views/scoreboards/summary.html.erb:12:in `_app_views_scoreboards_summary_html_erb__3864406847568180308_70189099254520'
+
+
+  Rendered /Users/lisapethick/.rvm/gems/ruby-1.9.2-p320/gems/actionpack-3.2.12/lib/action_dispatch/middleware/templates/rescues/_trace.erb (16.8ms)
+  Rendered /Users/lisapethick/.rvm/gems/ruby-1.9.2-p320/gems/actionpack-3.2.12/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.1ms)
+  Rendered /Users/lisapethick/.rvm/gems/ruby-1.9.2-p320/gems/actionpack-3.2.12/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (63.2ms)
+
+
+Started GET "/scoreboards/summary" for 127.0.0.1 at 2013-07-01 12:59:40 +0100
+Processing by ScoreboardsController#summary as HTML
+  [1m[35mScoreboard Load (0.6ms)[0m  SELECT "scoreboards".* FROM "scoreboards" ORDER BY user_id ASC
+  [1m[36mFixture Load (0.4ms)[0m  [1mSELECT "fixtures".* FROM "fixtures" ORDER BY fixtures.matchdate ASC[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mFixture Load (1.3ms)[0m  [1mSELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (1.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."remember_token" = 'H4HEspKjp_nqDIiveZMB6g' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."remember_token" = 'H4HEspKjp_nqDIiveZMB6g' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."remember_token" = 'H4HEspKjp_nqDIiveZMB6g' LIMIT 1[0m
+  [1m[35mFixture Load (0.4ms)[0m  SELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."remember_token" = 'H4HEspKjp_nqDIiveZMB6g' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."remember_token" = 'H4HEspKjp_nqDIiveZMB6g' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."remember_token" = 'H4HEspKjp_nqDIiveZMB6g' LIMIT 1
+  [1m[36mFixture Load (0.9ms)[0m  [1mSELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1[0m  [["id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."remember_token" = 'H4HEspKjp_nqDIiveZMB6g' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1[0m  [["id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."remember_token" = 'H4HEspKjp_nqDIiveZMB6g' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1[0m  [["id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."remember_token" = 'H4HEspKjp_nqDIiveZMB6g' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1[0m  [["id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."remember_token" = 'H4HEspKjp_nqDIiveZMB6g' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1[0m  [["id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."remember_token" = 'H4HEspKjp_nqDIiveZMB6g' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1[0m  [["id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."remember_token" = 'H4HEspKjp_nqDIiveZMB6g' LIMIT 1
+  [1m[36mFixture Load (0.4ms)[0m  [1mSELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1[0m  [["id", 4]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1  [["id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."remember_token" = 'H4HEspKjp_nqDIiveZMB6g' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1  [["id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1[0m  [["id", 4]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."remember_token" = 'H4HEspKjp_nqDIiveZMB6g' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1[0m  [["id", 4]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1  [["id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."remember_token" = 'H4HEspKjp_nqDIiveZMB6g' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1  [["id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1[0m  [["id", 4]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."remember_token" = 'H4HEspKjp_nqDIiveZMB6g' LIMIT 1
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."remember_token" = 'H4HEspKjp_nqDIiveZMB6g' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."remember_token" = 'H4HEspKjp_nqDIiveZMB6g' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."remember_token" = 'H4HEspKjp_nqDIiveZMB6g' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."remember_token" = 'H4HEspKjp_nqDIiveZMB6g' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."remember_token" = 'H4HEspKjp_nqDIiveZMB6g' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."remember_token" = 'H4HEspKjp_nqDIiveZMB6g' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1[0m  [["id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."remember_token" = 'H4HEspKjp_nqDIiveZMB6g' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1[0m  [["id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."remember_token" = 'H4HEspKjp_nqDIiveZMB6g' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1[0m  [["id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."remember_token" = 'H4HEspKjp_nqDIiveZMB6g' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1[0m  [["id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."remember_token" = 'H4HEspKjp_nqDIiveZMB6g' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1[0m  [["id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."remember_token" = 'H4HEspKjp_nqDIiveZMB6g' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1[0m  [["id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."remember_token" = 'H4HEspKjp_nqDIiveZMB6g' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1[0m  [["id", 4]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1  [["id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."remember_token" = 'H4HEspKjp_nqDIiveZMB6g' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1  [["id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1[0m  [["id", 4]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."remember_token" = 'H4HEspKjp_nqDIiveZMB6g' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1[0m  [["id", 4]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1  [["id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."remember_token" = 'H4HEspKjp_nqDIiveZMB6g' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1  [["id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1[0m  [["id", 4]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."remember_token" = 'H4HEspKjp_nqDIiveZMB6g' LIMIT 1
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 4]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."remember_token" = 'H4HEspKjp_nqDIiveZMB6g' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."remember_token" = 'H4HEspKjp_nqDIiveZMB6g' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."remember_token" = 'H4HEspKjp_nqDIiveZMB6g' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."remember_token" = 'H4HEspKjp_nqDIiveZMB6g' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."remember_token" = 'H4HEspKjp_nqDIiveZMB6g' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."remember_token" = 'H4HEspKjp_nqDIiveZMB6g' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1[0m  [["id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."remember_token" = 'H4HEspKjp_nqDIiveZMB6g' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1[0m  [["id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."remember_token" = 'H4HEspKjp_nqDIiveZMB6g' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1[0m  [["id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."remember_token" = 'H4HEspKjp_nqDIiveZMB6g' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1[0m  [["id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."remember_token" = 'H4HEspKjp_nqDIiveZMB6g' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1[0m  [["id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."remember_token" = 'H4HEspKjp_nqDIiveZMB6g' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1[0m  [["id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."remember_token" = 'H4HEspKjp_nqDIiveZMB6g' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1[0m  [["id", 4]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1  [["id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."remember_token" = 'H4HEspKjp_nqDIiveZMB6g' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1  [["id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1[0m  [["id", 4]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."remember_token" = 'H4HEspKjp_nqDIiveZMB6g' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1[0m  [["id", 4]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1  [["id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."remember_token" = 'H4HEspKjp_nqDIiveZMB6g' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1  [["id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1[0m  [["id", 4]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."remember_token" = 'H4HEspKjp_nqDIiveZMB6g' LIMIT 1
+  Rendered scoreboards/summary.html.erb within layouts/application (166.8ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."remember_token" = 'H4HEspKjp_nqDIiveZMB6g' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."remember_token" = 'H4HEspKjp_nqDIiveZMB6g' LIMIT 1
+  Rendered layouts/_header.html.erb (1.2ms)
+Completed 200 OK in 218ms (Views: 208.5ms | ActiveRecord: 7.1ms)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2013-07-01 12:59:40 +0100
+Served asset /application.css - 304 Not Modified (5ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2013-07-01 12:59:40 +0100
+Served asset /application.js - 304 Not Modified (50ms)
+
+
+Started GET "/scoreboards/summary" for 127.0.0.1 at 2013-07-01 13:00:16 +0100
+Processing by ScoreboardsController#summary as HTML
+  [1m[36mScoreboard Load (0.6ms)[0m  [1mSELECT "scoreboards".* FROM "scoreboards" ORDER BY user_id ASC[0m
+  [1m[35mFixture Load (0.4ms)[0m  SELECT "fixtures".* FROM "fixtures" ORDER BY fixtures.matchdate ASC
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  Rendered scoreboards/summary.html.erb within layouts/application (5.3ms)
+Completed 500 Internal Server Error in 11ms
+
+ActionView::Template::Error (undefined method `sort_by' for nil:NilClass):
+    27: 
+    28: 
+    29: <% scoreboards.each do |scoreboard| %>
+    30: <% scoreboard = @scoreboard.sort_by{|e| e[:fixture_id]}%>
+    31:   <tr>
+    32:     <td><% f = scoreboard.fixture_id %>	
+    33: 			<%= Fixture.find(f).hometeam %> - <%= Fixture.find(f).match %></td>
+  app/views/scoreboards/summary.html.erb:30:in `block (2 levels) in _app_views_scoreboards_summary_html_erb__3864406847568180308_70189102218340'
+  app/views/scoreboards/summary.html.erb:29:in `each'
+  app/views/scoreboards/summary.html.erb:29:in `block in _app_views_scoreboards_summary_html_erb__3864406847568180308_70189102218340'
+  app/views/scoreboards/summary.html.erb:12:in `each'
+  app/views/scoreboards/summary.html.erb:12:in `_app_views_scoreboards_summary_html_erb__3864406847568180308_70189102218340'
+
+
+  Rendered /Users/lisapethick/.rvm/gems/ruby-1.9.2-p320/gems/actionpack-3.2.12/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.7ms)
+  Rendered /Users/lisapethick/.rvm/gems/ruby-1.9.2-p320/gems/actionpack-3.2.12/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.2ms)
+  Rendered /Users/lisapethick/.rvm/gems/ruby-1.9.2-p320/gems/actionpack-3.2.12/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (25.9ms)
+
+
+Started GET "/scoreboards/summary" for 127.0.0.1 at 2013-07-01 13:00:50 +0100
+Processing by ScoreboardsController#summary as HTML
+  [1m[35mScoreboard Load (0.5ms)[0m  SELECT "scoreboards".* FROM "scoreboards" ORDER BY user_id ASC
+  [1m[36mFixture Load (0.5ms)[0m  [1mSELECT "fixtures".* FROM "fixtures" ORDER BY fixtures.matchdate ASC[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mFixture Load (0.3ms)[0m  [1mSELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."remember_token" = 'H4HEspKjp_nqDIiveZMB6g' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."remember_token" = 'H4HEspKjp_nqDIiveZMB6g' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."remember_token" = 'H4HEspKjp_nqDIiveZMB6g' LIMIT 1[0m
+  [1m[35mFixture Load (0.4ms)[0m  SELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."remember_token" = 'H4HEspKjp_nqDIiveZMB6g' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."remember_token" = 'H4HEspKjp_nqDIiveZMB6g' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."remember_token" = 'H4HEspKjp_nqDIiveZMB6g' LIMIT 1
+  [1m[36mFixture Load (0.4ms)[0m  [1mSELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1[0m  [["id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."remember_token" = 'H4HEspKjp_nqDIiveZMB6g' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1[0m  [["id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."remember_token" = 'H4HEspKjp_nqDIiveZMB6g' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1[0m  [["id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."remember_token" = 'H4HEspKjp_nqDIiveZMB6g' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1[0m  [["id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."remember_token" = 'H4HEspKjp_nqDIiveZMB6g' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1[0m  [["id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."remember_token" = 'H4HEspKjp_nqDIiveZMB6g' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1[0m  [["id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."remember_token" = 'H4HEspKjp_nqDIiveZMB6g' LIMIT 1
+  [1m[36mFixture Load (0.4ms)[0m  [1mSELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1[0m  [["id", 4]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1  [["id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."remember_token" = 'H4HEspKjp_nqDIiveZMB6g' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1  [["id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1[0m  [["id", 4]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."remember_token" = 'H4HEspKjp_nqDIiveZMB6g' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1[0m  [["id", 4]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1  [["id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."remember_token" = 'H4HEspKjp_nqDIiveZMB6g' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1  [["id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1[0m  [["id", 4]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."remember_token" = 'H4HEspKjp_nqDIiveZMB6g' LIMIT 1
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."remember_token" = 'H4HEspKjp_nqDIiveZMB6g' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."remember_token" = 'H4HEspKjp_nqDIiveZMB6g' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."remember_token" = 'H4HEspKjp_nqDIiveZMB6g' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."remember_token" = 'H4HEspKjp_nqDIiveZMB6g' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."remember_token" = 'H4HEspKjp_nqDIiveZMB6g' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."remember_token" = 'H4HEspKjp_nqDIiveZMB6g' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1[0m  [["id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."remember_token" = 'H4HEspKjp_nqDIiveZMB6g' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1[0m  [["id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."remember_token" = 'H4HEspKjp_nqDIiveZMB6g' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1[0m  [["id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."remember_token" = 'H4HEspKjp_nqDIiveZMB6g' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1[0m  [["id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."remember_token" = 'H4HEspKjp_nqDIiveZMB6g' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1[0m  [["id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."remember_token" = 'H4HEspKjp_nqDIiveZMB6g' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1[0m  [["id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."remember_token" = 'H4HEspKjp_nqDIiveZMB6g' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1[0m  [["id", 4]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1  [["id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."remember_token" = 'H4HEspKjp_nqDIiveZMB6g' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1  [["id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1[0m  [["id", 4]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."remember_token" = 'H4HEspKjp_nqDIiveZMB6g' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1[0m  [["id", 4]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1  [["id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."remember_token" = 'H4HEspKjp_nqDIiveZMB6g' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1  [["id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1[0m  [["id", 4]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."remember_token" = 'H4HEspKjp_nqDIiveZMB6g' LIMIT 1
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 4]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."remember_token" = 'H4HEspKjp_nqDIiveZMB6g' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."remember_token" = 'H4HEspKjp_nqDIiveZMB6g' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."remember_token" = 'H4HEspKjp_nqDIiveZMB6g' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."remember_token" = 'H4HEspKjp_nqDIiveZMB6g' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."remember_token" = 'H4HEspKjp_nqDIiveZMB6g' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."remember_token" = 'H4HEspKjp_nqDIiveZMB6g' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1[0m  [["id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."remember_token" = 'H4HEspKjp_nqDIiveZMB6g' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1[0m  [["id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."remember_token" = 'H4HEspKjp_nqDIiveZMB6g' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1[0m  [["id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."remember_token" = 'H4HEspKjp_nqDIiveZMB6g' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1[0m  [["id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."remember_token" = 'H4HEspKjp_nqDIiveZMB6g' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1[0m  [["id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."remember_token" = 'H4HEspKjp_nqDIiveZMB6g' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.6ms)[0m  [1mSELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1[0m  [["id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."remember_token" = 'H4HEspKjp_nqDIiveZMB6g' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1[0m  [["id", 4]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1  [["id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."remember_token" = 'H4HEspKjp_nqDIiveZMB6g' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1  [["id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1[0m  [["id", 4]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."remember_token" = 'H4HEspKjp_nqDIiveZMB6g' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1[0m  [["id", 4]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1  [["id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."remember_token" = 'H4HEspKjp_nqDIiveZMB6g' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1  [["id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1[0m  [["id", 4]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."remember_token" = 'H4HEspKjp_nqDIiveZMB6g' LIMIT 1
+  Rendered scoreboards/summary.html.erb within layouts/application (145.2ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."remember_token" = 'H4HEspKjp_nqDIiveZMB6g' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."remember_token" = 'H4HEspKjp_nqDIiveZMB6g' LIMIT 1
+  Rendered layouts/_header.html.erb (1.0ms)
+Completed 200 OK in 154ms (Views: 146.2ms | ActiveRecord: 5.4ms)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2013-07-01 13:00:50 +0100
+Served asset /application.css - 304 Not Modified (5ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2013-07-01 13:00:50 +0100
+Served asset /application.js - 304 Not Modified (5ms)
+
+
+Started GET "/scoreboards/summary" for 127.0.0.1 at 2013-07-01 13:07:09 +0100
+Processing by ScoreboardsController#summary as HTML
+  [1m[36mScoreboard Load (0.5ms)[0m  [1mSELECT "scoreboards".* FROM "scoreboards" ORDER BY user_id ASC[0m
+  [1m[35mFixture Load (0.5ms)[0m  SELECT "fixtures".* FROM "fixtures" ORDER BY fixtures.matchdate ASC
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  Rendered scoreboards/summary.html.erb within layouts/application (7.1ms)
+Completed 500 Internal Server Error in 27ms
+
+ActionView::Template::Error (can't convert Symbol into Integer):
+    25:     <th></th>
+    26:   </tr>
+    27: 
+    28: <% scoreboards_user = @scoreboards_user.sort_by{|e| e[:fixture_id]}%>
+    29: <% scoreboards_user.each do |scoreboard| %>
+    30:   <tr>
+    31:     <td><% f = scoreboard.fixture_id %>	
+  app/views/scoreboards/summary.html.erb:28:in `[]'
+  app/views/scoreboards/summary.html.erb:28:in `block (2 levels) in _app_views_scoreboards_summary_html_erb__3864406847568180308_70189117654180'
+  app/views/scoreboards/summary.html.erb:28:in `each'
+  app/views/scoreboards/summary.html.erb:28:in `sort_by'
+  app/views/scoreboards/summary.html.erb:28:in `block in _app_views_scoreboards_summary_html_erb__3864406847568180308_70189117654180'
+  app/views/scoreboards/summary.html.erb:12:in `each'
+  app/views/scoreboards/summary.html.erb:12:in `_app_views_scoreboards_summary_html_erb__3864406847568180308_70189117654180'
+
+
+  Rendered /Users/lisapethick/.rvm/gems/ruby-1.9.2-p320/gems/actionpack-3.2.12/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.6ms)
+  Rendered /Users/lisapethick/.rvm/gems/ruby-1.9.2-p320/gems/actionpack-3.2.12/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.2ms)
+  Rendered /Users/lisapethick/.rvm/gems/ruby-1.9.2-p320/gems/actionpack-3.2.12/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (14.7ms)
+
+
+Started GET "/scoreboards/summary" for 127.0.0.1 at 2013-07-01 13:07:23 +0100
+Processing by ScoreboardsController#summary as HTML
+  [1m[35mScoreboard Load (0.6ms)[0m  SELECT "scoreboards".* FROM "scoreboards" ORDER BY user_id ASC
+  [1m[36mFixture Load (0.6ms)[0m  [1mSELECT "fixtures".* FROM "fixtures" ORDER BY fixtures.matchdate ASC[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mFixture Load (1.3ms)[0m  [1mSELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."remember_token" = 'H4HEspKjp_nqDIiveZMB6g' LIMIT 1[0m
+  [1m[35mFixture Load (0.3ms)[0m  SELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."remember_token" = 'H4HEspKjp_nqDIiveZMB6g' LIMIT 1
+  [1m[36mFixture Load (0.3ms)[0m  [1mSELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1[0m  [["id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."remember_token" = 'H4HEspKjp_nqDIiveZMB6g' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1[0m  [["id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."remember_token" = 'H4HEspKjp_nqDIiveZMB6g' LIMIT 1
+  [1m[36mFixture Load (0.4ms)[0m  [1mSELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1[0m  [["id", 4]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1  [["id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."remember_token" = 'H4HEspKjp_nqDIiveZMB6g' LIMIT 1[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."remember_token" = 'H4HEspKjp_nqDIiveZMB6g' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."remember_token" = 'H4HEspKjp_nqDIiveZMB6g' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1[0m  [["id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."remember_token" = 'H4HEspKjp_nqDIiveZMB6g' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1[0m  [["id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."remember_token" = 'H4HEspKjp_nqDIiveZMB6g' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1  [["id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1[0m  [["id", 4]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."remember_token" = 'H4HEspKjp_nqDIiveZMB6g' LIMIT 1
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 4]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1[0m  [["id", 4]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1  [["id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."remember_token" = 'H4HEspKjp_nqDIiveZMB6g' LIMIT 1[0m
+  Rendered scoreboards/summary.html.erb within layouts/application (51.4ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."remember_token" = 'H4HEspKjp_nqDIiveZMB6g' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."remember_token" = 'H4HEspKjp_nqDIiveZMB6g' LIMIT 1[0m
+  Rendered layouts/_header.html.erb (2.0ms)
+Completed 200 OK in 74ms (Views: 65.4ms | ActiveRecord: 5.5ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2013-07-01 13:07:23 +0100
+Served asset /application.js - 304 Not Modified (33ms)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2013-07-01 13:07:23 +0100
+Served asset /application.css - 304 Not Modified (6ms)
+
+
+Started GET "/scoreboards" for 127.0.0.1 at 2013-07-01 13:07:35 +0100
+Processing by ScoreboardsController#index as HTML
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" 
+  [1m[36m (0.9ms)[0m  [1mSELECT SUM("scoreboards"."matchscore") AS sum_id FROM "scoreboards" WHERE "scoreboards"."user_id" = 1[0m
+  [1m[35m (0.3ms)[0m  SELECT SUM("scoreboards"."matchscore") AS sum_id FROM "scoreboards" WHERE "scoreboards"."user_id" = 2
+  [1m[36m (0.3ms)[0m  [1mSELECT SUM("scoreboards"."matchscore") AS sum_id FROM "scoreboards" WHERE "scoreboards"."user_id" = 3[0m
+  [1m[35m (0.4ms)[0m  SELECT SUM("scoreboards"."matchscore") AS sum_id FROM "scoreboards" WHERE "scoreboards"."user_id" = 4
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 3]]
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 4]]
+  [1m[35mUser Load (0.9ms)[0m  SELECT "users".* FROM "users" WHERE "users"."remember_token" = 'H4HEspKjp_nqDIiveZMB6g' LIMIT 1
+  Rendered scoreboards/index.html.erb within layouts/application (23.9ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."remember_token" = 'H4HEspKjp_nqDIiveZMB6g' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."remember_token" = 'H4HEspKjp_nqDIiveZMB6g' LIMIT 1
+  Rendered layouts/_header.html.erb (1.0ms)
+Completed 200 OK in 52ms (Views: 42.5ms | ActiveRecord: 4.9ms)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2013-07-01 13:07:36 +0100
+Served asset /application.css - 304 Not Modified (12ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2013-07-01 13:07:36 +0100
+Served asset /application.js - 304 Not Modified (3ms)
+
+
+Started GET "/signin" for 127.0.0.1 at 2013-07-01 13:07:39 +0100
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (134.4ms)
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."remember_token" = 'H4HEspKjp_nqDIiveZMB6g' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."remember_token" = 'H4HEspKjp_nqDIiveZMB6g' LIMIT 1
+  Rendered layouts/_header.html.erb (2.5ms)
+Completed 200 OK in 213ms (Views: 212.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2013-07-01 13:07:39 +0100
+Served asset /application.css - 304 Not Modified (13ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2013-07-01 13:07:39 +0100
+Served asset /application.js - 304 Not Modified (3ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2013-07-01 13:07:45 +0100
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"dFtCtHZBlaXEPADNlQKGf/ZQ1CXitWy6WY9m5VV1hVA=", "session"=>{"name"=>"pethl", "password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (33.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."name" = 'pethl' LIMIT 1[0m
+Redirected to http://localhost:3000/users/1
+Completed 302 Found in 190ms (ActiveRecord: 33.0ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2013-07-01 13:07:45 +0100
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", "1"]]
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."remember_token" = 'SN4rMRbqm4mB_iFZ1LqYBw' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", "1"]]
+  [1m[36m (85.3ms)[0m  [1mSELECT COUNT(*) FROM "matchpicks" WHERE "matchpicks"."user_id" = 1 AND "matchpicks"."reason" = 'Scores'[0m
+  [1m[35mMatchpick Load (0.4ms)[0m  SELECT "matchpicks".* FROM "matchpicks" WHERE "matchpicks"."user_id" = 1
+  [1m[36mPredict Load (22.2ms)[0m  [1mSELECT "predicts".* FROM "predicts" WHERE "predicts"."matchpick_id" = 1 ORDER BY id[0m
+  [1m[35mPredict Load (1.3ms)[0m  SELECT "predicts".* FROM "predicts" WHERE "predicts"."matchpick_id" = 2 ORDER BY id
+  Rendered users/show.html.erb within layouts/application (651.6ms)
+  Rendered layouts/_header.html.erb (0.3ms)
+Completed 200 OK in 727ms (Views: 443.3ms | ActiveRecord: 280.7ms)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2013-07-01 13:07:46 +0100
+Served asset /application.css - 304 Not Modified (19ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2013-07-01 13:07:46 +0100
+Served asset /application.js - 304 Not Modified (3ms)
+
+
+Started GET "/scoreboards" for 127.0.0.1 at 2013-07-01 13:07:50 +0100
+Processing by ScoreboardsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" [0m
+  [1m[35m (0.4ms)[0m  SELECT SUM("scoreboards"."matchscore") AS sum_id FROM "scoreboards" WHERE "scoreboards"."user_id" = 1
+  [1m[36m (0.3ms)[0m  [1mSELECT SUM("scoreboards"."matchscore") AS sum_id FROM "scoreboards" WHERE "scoreboards"."user_id" = 2[0m
+  [1m[35m (0.2ms)[0m  SELECT SUM("scoreboards"."matchscore") AS sum_id FROM "scoreboards" WHERE "scoreboards"."user_id" = 3
+  [1m[36m (0.3ms)[0m  [1mSELECT SUM("scoreboards"."matchscore") AS sum_id FROM "scoreboards" WHERE "scoreboards"."user_id" = 4[0m
+  [1m[35mUser Load (0.9ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 3]]
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 4]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 4]]
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."remember_token" = 'SN4rMRbqm4mB_iFZ1LqYBw' LIMIT 1[0m
+  Rendered scoreboards/index.html.erb within layouts/application (8.6ms)
+  Rendered layouts/_header.html.erb (0.1ms)
+Completed 200 OK in 38ms (Views: 30.6ms | ActiveRecord: 3.8ms)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2013-07-01 13:07:51 +0100
+Served asset /application.css - 304 Not Modified (5ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2013-07-01 13:07:51 +0100
+Served asset /application.js - 304 Not Modified (3ms)
+
+
+Started POST "/scoreboards/generate" for 127.0.0.1 at 2013-07-01 13:07:56 +0100
+Processing by ScoreboardsController#generate as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"dFtCtHZBlaXEPADNlQKGf/ZQ1CXitWy6WY9m5VV1hVA=", "fixture_id"=>"9", "commit"=>"Generate"}
+  [1m[35m (0.5ms)[0m  SELECT id FROM "users" 
+  [1m[36m (18.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (156.6ms)[0m  INSERT INTO "scoreboards" ("comments", "created_at", "fixture_id", "matchscore", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["comments", nil], ["created_at", Mon, 01 Jul 2013 12:07:56 UTC +00:00], ["fixture_id", 9], ["matchscore", 0], ["updated_at", Mon, 01 Jul 2013 12:07:56 UTC +00:00], ["user_id", 1]]
+  [1m[36m (58.9ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "scoreboards" ("comments", "created_at", "fixture_id", "matchscore", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["comments", nil], ["created_at", Mon, 01 Jul 2013 12:07:56 UTC +00:00], ["fixture_id", 9], ["matchscore", 0], ["updated_at", Mon, 01 Jul 2013 12:07:56 UTC +00:00], ["user_id", 2]]
+  [1m[35m (0.9ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "scoreboards" ("comments", "created_at", "fixture_id", "matchscore", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["comments", nil], ["created_at", Mon, 01 Jul 2013 12:07:56 UTC +00:00], ["fixture_id", 9], ["matchscore", 0], ["updated_at", Mon, 01 Jul 2013 12:07:56 UTC +00:00], ["user_id", 3]]
+  [1m[36m (0.9ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "scoreboards" ("comments", "created_at", "fixture_id", "matchscore", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["comments", nil], ["created_at", Mon, 01 Jul 2013 12:07:56 UTC +00:00], ["fixture_id", 9], ["matchscore", 0], ["updated_at", Mon, 01 Jul 2013 12:07:56 UTC +00:00], ["user_id", 4]]
+  [1m[35m (0.8ms)[0m  COMMIT
+Redirected to http://localhost:3000/scoreboards
+Completed 302 Found in 253ms (ActiveRecord: 239.4ms)
+
+
+Started GET "/scoreboards" for 127.0.0.1 at 2013-07-01 13:07:56 +0100
+Processing by ScoreboardsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" [0m
+  [1m[35m (1.2ms)[0m  SELECT SUM("scoreboards"."matchscore") AS sum_id FROM "scoreboards" WHERE "scoreboards"."user_id" = 1
+  [1m[36m (0.4ms)[0m  [1mSELECT SUM("scoreboards"."matchscore") AS sum_id FROM "scoreboards" WHERE "scoreboards"."user_id" = 2[0m
+  [1m[35m (0.4ms)[0m  SELECT SUM("scoreboards"."matchscore") AS sum_id FROM "scoreboards" WHERE "scoreboards"."user_id" = 3
+  [1m[36m (0.3ms)[0m  [1mSELECT SUM("scoreboards"."matchscore") AS sum_id FROM "scoreboards" WHERE "scoreboards"."user_id" = 4[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 3]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 4]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 4]]
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."remember_token" = 'SN4rMRbqm4mB_iFZ1LqYBw' LIMIT 1[0m
+  Rendered scoreboards/index.html.erb within layouts/application (38.1ms)
+  Rendered layouts/_header.html.erb (0.1ms)
+Completed 200 OK in 49ms (Views: 41.0ms | ActiveRecord: 4.4ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2013-07-01 13:07:56 +0100
+Served asset /application.js - 304 Not Modified (10ms)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2013-07-01 13:07:56 +0100
+Served asset /application.css - 304 Not Modified (4ms)
+
+
+Started GET "/scoreboards/summary" for 127.0.0.1 at 2013-07-01 13:07:58 +0100
+Processing by ScoreboardsController#summary as HTML
+  [1m[35mScoreboard Load (0.6ms)[0m  SELECT "scoreboards".* FROM "scoreboards" ORDER BY user_id ASC
+  [1m[36mFixture Load (0.6ms)[0m  [1mSELECT "fixtures".* FROM "fixtures" ORDER BY fixtures.matchdate ASC[0m
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mFixture Load (0.3ms)[0m  [1mSELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."remember_token" = 'SN4rMRbqm4mB_iFZ1LqYBw' LIMIT 1[0m
+  [1m[35mFixture Load (0.5ms)[0m  SELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mFixture Load (0.4ms)[0m  SELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1[0m  [["id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1[0m  [["id", 3]]
+  [1m[35mFixture Load (0.4ms)[0m  SELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1  [["id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1[0m  [["id", 4]]
+  [1m[35mFixture Load (0.4ms)[0m  SELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1  [["id", 9]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1[0m  [["id", 9]]
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1[0m  [["id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1[0m  [["id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1  [["id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1[0m  [["id", 4]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1  [["id", 9]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1[0m  [["id", 9]]
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 4]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1  [["id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1[0m  [["id", 4]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1  [["id", 9]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1[0m  [["id", 9]]
+  Rendered scoreboards/summary.html.erb within layouts/application (94.1ms)
+  Rendered layouts/_header.html.erb (0.1ms)
+Completed 200 OK in 102ms (Views: 94.4ms | ActiveRecord: 5.1ms)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2013-07-01 13:07:58 +0100
+Served asset /application.css - 304 Not Modified (4ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2013-07-01 13:07:58 +0100
+Served asset /application.js - 304 Not Modified (3ms)
+
+
+Started GET "/scoreboards/21/edit" for 127.0.0.1 at 2013-07-01 13:08:02 +0100
+Processing by ScoreboardsController#edit as HTML
+  Parameters: {"id"=>"21"}
+  [1m[35mScoreboard Load (0.8ms)[0m  SELECT "scoreboards".* FROM "scoreboards" WHERE "scoreboards"."id" = $1 LIMIT 1  [["id", "21"]]
+  Rendered scoreboards/_form.html.erb (1630.0ms)
+  Rendered scoreboards/edit.html.erb within layouts/application (1819.3ms)
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."remember_token" = 'SN4rMRbqm4mB_iFZ1LqYBw' LIMIT 1[0m
+  Rendered layouts/_header.html.erb (1.8ms)
+Completed 200 OK in 1901ms (Views: 1897.9ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2013-07-01 13:08:04 +0100
+Served asset /application.js - 304 Not Modified (9ms)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2013-07-01 13:08:04 +0100
+Served asset /application.css - 304 Not Modified (5ms)
+
+
+Started PUT "/scoreboards/21" for 127.0.0.1 at 2013-07-01 13:09:06 +0100
+Processing by ScoreboardsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"dFtCtHZBlaXEPADNlQKGf/ZQ1CXitWy6WY9m5VV1hVA=", "scoreboard"=>{"fixture_id"=>"9", "user_id"=>"2", "matchscore"=>"1", "comments"=>""}, "commit"=>"Update Scoreboard", "id"=>"21"}
+  [1m[35mScoreboard Load (0.5ms)[0m  SELECT "scoreboards".* FROM "scoreboards" WHERE "scoreboards"."id" = $1 LIMIT 1  [["id", "21"]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (30.9ms)[0m  UPDATE "scoreboards" SET "matchscore" = 1, "comments" = '', "updated_at" = '2013-07-01 12:09:06.098332' WHERE "scoreboards"."id" = 21
+  [1m[36m (26.9ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/scoreboards/21
+Completed 302 Found in 65ms (ActiveRecord: 58.4ms)
+
+
+Started GET "/scoreboards/21" for 127.0.0.1 at 2013-07-01 13:09:06 +0100
+Processing by ScoreboardsController#show as HTML
+  Parameters: {"id"=>"21"}
+  [1m[35mScoreboard Load (0.5ms)[0m  SELECT "scoreboards".* FROM "scoreboards" WHERE "scoreboards"."id" = $1 LIMIT 1  [["id", "21"]]
+  Rendered scoreboards/show.html.erb within layouts/application (2.1ms)
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."remember_token" = 'SN4rMRbqm4mB_iFZ1LqYBw' LIMIT 1[0m
+  Rendered layouts/_header.html.erb (1.9ms)
+Completed 200 OK in 58ms (Views: 55.9ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2013-07-01 13:09:06 +0100
+Served asset /application.css - 304 Not Modified (5ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2013-07-01 13:09:06 +0100
+Served asset /application.js - 304 Not Modified (25ms)
+
+
+Started GET "/scoreboards" for 127.0.0.1 at 2013-07-01 13:09:07 +0100
+Processing by ScoreboardsController#index as HTML
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" 
+  [1m[36m (0.4ms)[0m  [1mSELECT SUM("scoreboards"."matchscore") AS sum_id FROM "scoreboards" WHERE "scoreboards"."user_id" = 1[0m
+  [1m[35m (0.3ms)[0m  SELECT SUM("scoreboards"."matchscore") AS sum_id FROM "scoreboards" WHERE "scoreboards"."user_id" = 2
+  [1m[36m (0.2ms)[0m  [1mSELECT SUM("scoreboards"."matchscore") AS sum_id FROM "scoreboards" WHERE "scoreboards"."user_id" = 3[0m
+  [1m[35m (0.2ms)[0m  SELECT SUM("scoreboards"."matchscore") AS sum_id FROM "scoreboards" WHERE "scoreboards"."user_id" = 4
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 3]]
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 4]]
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."remember_token" = 'SN4rMRbqm4mB_iFZ1LqYBw' LIMIT 1
+  Rendered scoreboards/index.html.erb within layouts/application (7.6ms)
+  Rendered layouts/_header.html.erb (0.1ms)
+Completed 200 OK in 35ms (Views: 29.1ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2013-07-01 13:09:07 +0100
+Served asset /application.css - 304 Not Modified (9ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2013-07-01 13:09:07 +0100
+Served asset /application.js - 304 Not Modified (3ms)
+
+
+Started GET "/scoreboards/summary" for 127.0.0.1 at 2013-07-01 13:09:10 +0100
+Processing by ScoreboardsController#summary as HTML
+  [1m[36mScoreboard Load (0.5ms)[0m  [1mSELECT "scoreboards".* FROM "scoreboards" ORDER BY user_id ASC[0m
+  [1m[35mFixture Load (0.5ms)[0m  SELECT "fixtures".* FROM "fixtures" ORDER BY fixtures.matchdate ASC
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mFixture Load (0.3ms)[0m  SELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE "users"."remember_token" = 'SN4rMRbqm4mB_iFZ1LqYBw' LIMIT 1
+  [1m[36mFixture Load (0.4ms)[0m  [1mSELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1  [["id", 2]]
+  [1m[36mFixture Load (0.3ms)[0m  [1mSELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1[0m  [["id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1[0m  [["id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1  [["id", 3]]
+  [1m[36mFixture Load (0.4ms)[0m  [1mSELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1[0m  [["id", 4]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1  [["id", 4]]
+  [1m[36mFixture Load (0.4ms)[0m  [1mSELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1[0m  [["id", 9]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1  [["id", 9]]
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1[0m  [["id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1[0m  [["id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1[0m  [["id", 4]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1  [["id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1[0m  [["id", 9]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1  [["id", 9]]
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 4]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1[0m  [["id", 4]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1  [["id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1[0m  [["id", 9]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1  [["id", 9]]
+  Rendered scoreboards/summary.html.erb within layouts/application (41.6ms)
+  Rendered layouts/_header.html.erb (0.1ms)
+Completed 200 OK in 96ms (Views: 88.4ms | ActiveRecord: 5.0ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2013-07-01 13:09:10 +0100
+Served asset /application.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2013-07-01 13:09:10 +0100
+Served asset /application.css - 304 Not Modified (4ms)
+
+
+Started GET "/scoreboards/summary" for 127.0.0.1 at 2013-07-01 13:10:11 +0100
+Processing by ScoreboardsController#summary as HTML
+  [1m[36mScoreboard Load (0.7ms)[0m  [1mSELECT "scoreboards".* FROM "scoreboards" ORDER BY user_id ASC[0m
+  [1m[35mFixture Load (0.5ms)[0m  SELECT "fixtures".* FROM "fixtures" ORDER BY fixtures.matchdate ASC
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mFixture Load (0.3ms)[0m  SELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."remember_token" = 'SN4rMRbqm4mB_iFZ1LqYBw' LIMIT 1
+  [1m[36mFixture Load (0.3ms)[0m  [1mSELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1  [["id", 2]]
+  [1m[36mFixture Load (0.4ms)[0m  [1mSELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1[0m  [["id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1[0m  [["id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1  [["id", 3]]
+  [1m[36mFixture Load (0.3ms)[0m  [1mSELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1[0m  [["id", 4]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1  [["id", 4]]
+  [1m[36mFixture Load (0.3ms)[0m  [1mSELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1[0m  [["id", 9]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1  [["id", 9]]
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1[0m  [["id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1[0m  [["id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1[0m  [["id", 4]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1  [["id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1[0m  [["id", 9]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1  [["id", 9]]
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 4]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1[0m  [["id", 4]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1  [["id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1[0m  [["id", 9]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1  [["id", 9]]
+  Rendered scoreboards/summary.html.erb within layouts/application (38.9ms)
+  Rendered layouts/_header.html.erb (0.1ms)
+Completed 200 OK in 47ms (Views: 39.5ms | ActiveRecord: 4.7ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2013-07-01 13:10:11 +0100
+Served asset /application.js - 304 Not Modified (8ms)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2013-07-01 13:10:11 +0100
+Served asset /application.css - 304 Not Modified (4ms)
+
+
+Started PUT "/scoreboards/17" for 127.0.0.1 at 2013-07-01 13:10:16 +0100
+Processing by ScoreboardsController#update as JSON
+  Parameters: {"scoreboard"=>{"matchscore"=>"1"}, "authenticity_token"=>"dFtCtHZBlaXEPADNlQKGf/ZQ1CXitWy6WY9m5VV1hVA=", "id"=>"17"}
+  [1m[36mScoreboard Load (0.7ms)[0m  [1mSELECT "scoreboards".* FROM "scoreboards" WHERE "scoreboards"."id" = $1 LIMIT 1[0m  [["id", "17"]]
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.4ms)[0m  [1mUPDATE "scoreboards" SET "matchscore" = 1, "updated_at" = '2013-07-01 12:10:16.183669' WHERE "scoreboards"."id" = 17[0m
+  [1m[35m (55.3ms)[0m  COMMIT
+Completed 204 No Content in 60ms (ActiveRecord: 56.5ms)
+
+
+Started GET "/scoreboards/summary" for 127.0.0.1 at 2013-07-01 13:10:22 +0100
+Processing by ScoreboardsController#summary as HTML
+  [1m[36mScoreboard Load (0.5ms)[0m  [1mSELECT "scoreboards".* FROM "scoreboards" ORDER BY user_id ASC[0m
+  [1m[35mFixture Load (0.5ms)[0m  SELECT "fixtures".* FROM "fixtures" ORDER BY fixtures.matchdate ASC
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mFixture Load (0.3ms)[0m  SELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."remember_token" = 'SN4rMRbqm4mB_iFZ1LqYBw' LIMIT 1
+  [1m[36mFixture Load (0.3ms)[0m  [1mSELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1  [["id", 2]]
+  [1m[36mFixture Load (0.4ms)[0m  [1mSELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1[0m  [["id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1[0m  [["id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1  [["id", 3]]
+  [1m[36mFixture Load (0.4ms)[0m  [1mSELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1[0m  [["id", 4]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1  [["id", 4]]
+  [1m[36mFixture Load (0.3ms)[0m  [1mSELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1[0m  [["id", 9]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1  [["id", 9]]
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1[0m  [["id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1[0m  [["id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1[0m  [["id", 4]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1  [["id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1[0m  [["id", 9]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1  [["id", 9]]
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 4]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1[0m  [["id", 4]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1  [["id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1[0m  [["id", 9]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1  [["id", 9]]
+  Rendered scoreboards/summary.html.erb within layouts/application (45.7ms)
+  Rendered layouts/_header.html.erb (0.1ms)
+Completed 200 OK in 54ms (Views: 46.7ms | ActiveRecord: 4.6ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2013-07-01 13:10:22 +0100
+Served asset /application.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2013-07-01 13:10:22 +0100
+Served asset /application.css - 304 Not Modified (4ms)
+
+
+Started GET "/scoreboards/summary" for 127.0.0.1 at 2013-07-01 13:10:33 +0100
+Processing by ScoreboardsController#summary as HTML
+  [1m[36mScoreboard Load (0.6ms)[0m  [1mSELECT "scoreboards".* FROM "scoreboards" ORDER BY user_id ASC[0m
+  [1m[35mFixture Load (0.5ms)[0m  SELECT "fixtures".* FROM "fixtures" ORDER BY fixtures.matchdate ASC
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mFixture Load (0.4ms)[0m  SELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."remember_token" = 'SN4rMRbqm4mB_iFZ1LqYBw' LIMIT 1
+  [1m[36mFixture Load (0.3ms)[0m  [1mSELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1  [["id", 2]]
+  [1m[36mFixture Load (0.4ms)[0m  [1mSELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1[0m  [["id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1[0m  [["id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1  [["id", 3]]
+  [1m[36mFixture Load (0.4ms)[0m  [1mSELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1[0m  [["id", 4]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1  [["id", 4]]
+  [1m[36mFixture Load (0.3ms)[0m  [1mSELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1[0m  [["id", 9]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1  [["id", 9]]
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1[0m  [["id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1[0m  [["id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1[0m  [["id", 4]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1  [["id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1[0m  [["id", 9]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1  [["id", 9]]
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 4]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1[0m  [["id", 4]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1  [["id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1[0m  [["id", 9]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1  [["id", 9]]
+  Rendered scoreboards/summary.html.erb within layouts/application (39.2ms)
+  Rendered layouts/_header.html.erb (0.1ms)
+Completed 200 OK in 48ms (Views: 40.1ms | ActiveRecord: 5.0ms)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2013-07-01 13:10:33 +0100
+Served asset /application.css - 304 Not Modified (5ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2013-07-01 13:10:33 +0100
+Served asset /application.js - 304 Not Modified (3ms)
+
+
+Started GET "/scoreboards/summary" for 127.0.0.1 at 2013-07-01 13:10:43 +0100
+Processing by ScoreboardsController#summary as HTML
+  [1m[36mScoreboard Load (0.7ms)[0m  [1mSELECT "scoreboards".* FROM "scoreboards" ORDER BY user_id ASC[0m
+  [1m[35mFixture Load (0.5ms)[0m  SELECT "fixtures".* FROM "fixtures" ORDER BY fixtures.matchdate ASC
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mFixture Load (0.3ms)[0m  SELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE "users"."remember_token" = 'SN4rMRbqm4mB_iFZ1LqYBw' LIMIT 1
+  [1m[36mFixture Load (0.4ms)[0m  [1mSELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1  [["id", 2]]
+  [1m[36mFixture Load (0.6ms)[0m  [1mSELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1[0m  [["id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1[0m  [["id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1  [["id", 3]]
+  [1m[36mFixture Load (0.4ms)[0m  [1mSELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1[0m  [["id", 4]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1  [["id", 4]]
+  [1m[36mFixture Load (0.3ms)[0m  [1mSELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1[0m  [["id", 9]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1  [["id", 9]]
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1[0m  [["id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1[0m  [["id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1[0m  [["id", 4]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1  [["id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1[0m  [["id", 9]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1  [["id", 9]]
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 4]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1[0m  [["id", 4]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1  [["id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1[0m  [["id", 9]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1  [["id", 9]]
+  Rendered scoreboards/summary.html.erb within layouts/application (40.0ms)
+  Rendered layouts/_header.html.erb (0.1ms)
+Completed 200 OK in 49ms (Views: 40.7ms | ActiveRecord: 5.1ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2013-07-01 13:10:43 +0100
+Served asset /application.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2013-07-01 13:10:43 +0100
+Served asset /application.css - 304 Not Modified (4ms)
+
+
+Started GET "/scoreboards" for 127.0.0.1 at 2013-07-01 13:10:53 +0100
+Processing by ScoreboardsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" [0m
+  [1m[35m (0.4ms)[0m  SELECT SUM("scoreboards"."matchscore") AS sum_id FROM "scoreboards" WHERE "scoreboards"."user_id" = 1
+  [1m[36m (0.9ms)[0m  [1mSELECT SUM("scoreboards"."matchscore") AS sum_id FROM "scoreboards" WHERE "scoreboards"."user_id" = 2[0m
+  [1m[35m (0.6ms)[0m  SELECT SUM("scoreboards"."matchscore") AS sum_id FROM "scoreboards" WHERE "scoreboards"."user_id" = 3
+  [1m[36m (0.3ms)[0m  [1mSELECT SUM("scoreboards"."matchscore") AS sum_id FROM "scoreboards" WHERE "scoreboards"."user_id" = 4[0m
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 3]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 4]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 4]]
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."remember_token" = 'SN4rMRbqm4mB_iFZ1LqYBw' LIMIT 1[0m
+  Rendered scoreboards/index.html.erb within layouts/application (7.0ms)
+  Rendered layouts/_header.html.erb (0.1ms)
+Completed 200 OK in 34ms (Views: 25.9ms | ActiveRecord: 4.3ms)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2013-07-01 13:10:53 +0100
+Served asset /application.css - 304 Not Modified (4ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2013-07-01 13:10:53 +0100
+Served asset /application.js - 304 Not Modified (3ms)
+
+
+Started GET "/scoreboards/summary" for 127.0.0.1 at 2013-07-01 13:10:58 +0100
+Processing by ScoreboardsController#summary as HTML
+  [1m[35mScoreboard Load (0.5ms)[0m  SELECT "scoreboards".* FROM "scoreboards" ORDER BY user_id ASC
+  [1m[36mFixture Load (0.4ms)[0m  [1mSELECT "fixtures".* FROM "fixtures" ORDER BY fixtures.matchdate ASC[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mFixture Load (0.3ms)[0m  [1mSELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."remember_token" = 'SN4rMRbqm4mB_iFZ1LqYBw' LIMIT 1[0m
+  [1m[35mFixture Load (0.3ms)[0m  SELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mFixture Load (0.4ms)[0m  SELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1[0m  [["id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1[0m  [["id", 3]]
+  [1m[35mFixture Load (0.4ms)[0m  SELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1  [["id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1[0m  [["id", 4]]
+  [1m[35mFixture Load (0.4ms)[0m  SELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1  [["id", 9]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1[0m  [["id", 9]]
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1[0m  [["id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1[0m  [["id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1  [["id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1[0m  [["id", 4]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1  [["id", 9]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1[0m  [["id", 9]]
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 4]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1  [["id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1[0m  [["id", 4]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1  [["id", 9]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1[0m  [["id", 9]]
+  Rendered scoreboards/summary.html.erb within layouts/application (39.8ms)
+  Rendered layouts/_header.html.erb (0.1ms)
+Completed 200 OK in 48ms (Views: 40.7ms | ActiveRecord: 4.6ms)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2013-07-01 13:10:59 +0100
+Served asset /application.css - 304 Not Modified (4ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2013-07-01 13:10:59 +0100
+Served asset /application.js - 304 Not Modified (3ms)

@@ -9,7 +9,7 @@
 <div class="row-fluid">
   <div class="span6 offset1">
 
-<% @scoreboards_user.each do |user_id, scoreboards| %>
+<% @scoreboards_user.each do |user_id, scoreboards_user| %>
 <h3>	<% m = user_id %>	
 	<% if User.find(m).name == "pethl" %>
 	  <% else %>
@@ -20,25 +20,20 @@
   <tr>
     <th>Fixture</th>
     <th><center>Matchscore</center></th>
-
-    <th></th>
     <th></th>
   </tr>
 
-<% scoreboards.each do |scoreboard| %>
+<% scoreboards_user = scoreboards_user.sort_by{|e| e[:fixture_id]}%>
+<% scoreboards_user.each do |scoreboard| %>
   <tr>
     <td><% f = scoreboard.fixture_id %>	
 			<%= Fixture.find(f).hometeam %> - <%= Fixture.find(f).match %></td>
-
-    <td><center><%= scoreboard.matchscore %></center></td>
    
-    
     <% if signed_in? && current_user.admin? %>
     <td><center><%= best_in_place scoreboard, :matchscore, :nil => "x" %></center></td>
-    <td><b><%= link_to 'S', scoreboard %> : 
-    <%= link_to 'E', edit_scoreboard_path(scoreboard) %>
-    : <%= link_to 'D', scoreboard, method: :delete, data: { confirm: 'Are you sure?' } %></td>
- 
+    <td><b><%= link_to 'D', scoreboard, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  <% else %>
+  <td><center><%= scoreboard.matchscore %></center></td>
     <% end %><% end %>
   </tr>
 <% end %>
