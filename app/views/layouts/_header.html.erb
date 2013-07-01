@@ -6,7 +6,7 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="brand" href="/home.html">Lions Tour '13</a>
+        <a class="brand" href="/home.html">Lions Tour 2013</a>
         <div class="nav-collapse collapse">
           <ul class="nav">
           	<li class="active"><a href="/fixtures">Fixtures</a></li> 
@@ -28,12 +28,10 @@
 		  </li>
 		</ul>
 	
-	
-	
-	
 	       <li class="active"><a href='/signout' rel="nofollow" data-method="delete" data-confirm="Are you sure?">| Sign Out |</a></li>
 	<% else %>
 	       <li class="active"><a href="/signin">| Sign In | </a></li>	
+  
 	<% end %>
 
 	<% if signed_in? && current_user.admin? %>

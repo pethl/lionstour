@@ -20,7 +20,7 @@
   <tr>
     <th>Fixture</th>
     <th><center>Matchscore</center></th>
-    <th>Comments</th>
+
     <th></th>
     <th></th>
   </tr>
@@ -28,10 +28,10 @@
 <% scoreboards.each do |scoreboard| %>
   <tr>
     <td><% f = scoreboard.fixture_id %>	
-			<%= Fixture.find(f).hometeam %></td>
+			<%= Fixture.find(f).hometeam %> - <%= Fixture.find(f).match %></td>
 
     <td><center><%= scoreboard.matchscore %></center></td>
-    <td><%= scoreboard.comments %></td>
+   
     
     <% if signed_in? && current_user.admin? %>
     <td><center><%= best_in_place scoreboard, :matchscore, :nil => "x" %></center></td>
