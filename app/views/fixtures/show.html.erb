@@ -2,13 +2,11 @@
 <% require 'date' %>
 <% date = DateTime.parse("2013-06-21 00:00:00") %>
 
-
 <p id="notice"><%= notice %></p>
-
 <h3>Match Details</h3>
 
 <div class="row-fluid">
-  <div class="span3 offset1">
+  <div class="span3">
 		<div class="well well-small">
 
 <table>
@@ -40,23 +38,27 @@
 </div>
 </div>
 
+<% if @fixture.id == 10 %>
+  <div class="span3">
+  <%= render '/fixtures/header' %>
+  </div>
+<% end %>
+
 <div class="span6">
 	<% if date < Date.today %>
 		<% @predicts = get_predictions_for_fixture(@fixture.id) %>
 		<% if @predicts.any? %>
 		<% for predict in @predicts do %>
-			
+
 			<table>	
 			<tr>
 				<td> <%= get_user_name_for_prediction(predict.matchpick_id) %></td>
 					<td><center><%= predict.homescore %> : 	<%= predict.awayscore %></center></td>
 			</tr>
 			</table>
-			<% end %><% end %>	<% end %>		
+			<% end %><% end %>	<% end %>
 			<br>
-<%= link_to 'Back to fixtures', fixtures_path %>
+      <strong><%= link_to 'Back to fixtures', fixtures_path %>
+      </div>
+
 </div>
-</div>
-
-
-
