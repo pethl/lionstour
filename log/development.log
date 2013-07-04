@@ -5184,3 +5184,33 @@ Served asset /application.css - 304 Not Modified (5ms)
 
 Started GET "/assets/glyphicons-halflings.png" for 127.0.0.1 at 2013-07-04 16:08:23 +0100
 Served asset /glyphicons-halflings.png - 304 Not Modified (0ms)
+
+
+Started GET "/fixtures/10" for 127.0.0.1 at 2013-07-04 16:09:33 +0100
+Processing by FixturesController#show as HTML
+  Parameters: {"id"=>"10"}
+  [1m[36mFixture Load (0.8ms)[0m  [1mSELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1[0m  [["id", "10"]]
+  Rendered fixtures/_header.html.erb (0.4ms)
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM "predicts" WHERE "predicts"."fixture_id" = 10
+  [1m[36mPredict Load (0.4ms)[0m  [1mSELECT "predicts".* FROM "predicts" WHERE "predicts"."fixture_id" = 10[0m
+  [1m[35m (0.6ms)[0m  SELECT COUNT(*) FROM "matchpicks" WHERE "matchpicks"."id" = 4 AND "matchpicks"."reason" = 'Scores'
+  [1m[36mMatchpick Load (0.4ms)[0m  [1mSELECT "matchpicks".* FROM "matchpicks" WHERE "matchpicks"."id" = 4 AND "matchpicks"."reason" = 'Scores'[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "matchpicks" WHERE "matchpicks"."id" = 6 AND "matchpicks"."reason" = 'Scores'[0m
+  [1m[35mMatchpick Load (0.3ms)[0m  SELECT "matchpicks".* FROM "matchpicks" WHERE "matchpicks"."id" = 6 AND "matchpicks"."reason" = 'Scores'
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 3]]
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "matchpicks" WHERE "matchpicks"."id" = 8 AND "matchpicks"."reason" = 'Scores'
+  [1m[36mMatchpick Load (0.3ms)[0m  [1mSELECT "matchpicks".* FROM "matchpicks" WHERE "matchpicks"."id" = 8 AND "matchpicks"."reason" = 'Scores'[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 4]]
+  Rendered fixtures/show.html.erb within layouts/application (12.5ms)
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."remember_token" = 'SN4rMRbqm4mB_iFZ1LqYBw' LIMIT 1[0m
+  Rendered layouts/_header.html.erb (1.5ms)
+Completed 200 OK in 21ms (Views: 14.1ms | ActiveRecord: 5.1ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2013-07-04 16:09:33 +0100
+Served asset /application.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2013-07-04 16:09:33 +0100
+Served asset /application.css - 304 Not Modified (4ms)
