@@ -17,8 +17,14 @@ gem 'bootstrap-will_paginate', '0.0.6'
 
 
 
-group :development, :test do
+group :development do
   	gem 'pg', '0.12.2'
+  	gem 'rspec-rails', '2.11.0'
+end
+
+group :test do
+  	gem 'pg', '0.12.2'
+    gem 'capybara', '1.1.2'
 end
 
 group :production do

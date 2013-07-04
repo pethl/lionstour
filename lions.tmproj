@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>currentDocument</key>
-	<string>app/views/layouts/_header.html.erb</string>
+	<string>spec/requests/static_pages_spec.rb</string>
 	<key>documents</key>
 	<array>
 		<dict>
@@ -26,20 +26,6 @@
 	<integer>268</integer>
 	<key>metaData</key>
 	<dict>
-		<key>app/views/layouts/_header.html.erb</key>
-		<dict>
-			<key>caret</key>
-			<dict>
-				<key>column</key>
-				<integer>0</integer>
-				<key>line</key>
-				<integer>33</integer>
-			</dict>
-			<key>firstVisibleColumn</key>
-			<integer>0</integer>
-			<key>firstVisibleLine</key>
-			<integer>33</integer>
-		</dict>
 		<key>app/views/sessions/new.html.erb</key>
 		<dict>
 			<key>caret</key>
@@ -70,11 +56,70 @@
 				<integer>16</integer>
 			</dict>
 		</dict>
+		<key>app/views/static_pages/home.html.erb</key>
+		<dict>
+			<key>caret</key>
+			<dict>
+				<key>column</key>
+				<integer>21</integer>
+				<key>line</key>
+				<integer>2</integer>
+			</dict>
+			<key>columnSelection</key>
+			<false/>
+			<key>firstVisibleColumn</key>
+			<integer>0</integer>
+			<key>firstVisibleLine</key>
+			<integer>0</integer>
+			<key>selectFrom</key>
+			<dict>
+				<key>column</key>
+				<integer>6</integer>
+				<key>line</key>
+				<integer>2</integer>
+			</dict>
+			<key>selectTo</key>
+			<dict>
+				<key>column</key>
+				<integer>21</integer>
+				<key>line</key>
+				<integer>2</integer>
+			</dict>
+		</dict>
+		<key>spec/requests/static_pages_spec.rb</key>
+		<dict>
+			<key>caret</key>
+			<dict>
+				<key>column</key>
+				<integer>18</integer>
+				<key>line</key>
+				<integer>7</integer>
+			</dict>
+			<key>firstVisibleColumn</key>
+			<integer>0</integer>
+			<key>firstVisibleLine</key>
+			<integer>0</integer>
+		</dict>
+		<key>spec/spec_helper.rb</key>
+		<dict>
+			<key>caret</key>
+			<dict>
+				<key>column</key>
+				<integer>0</integer>
+				<key>line</key>
+				<integer>0</integer>
+			</dict>
+			<key>firstVisibleColumn</key>
+			<integer>0</integer>
+			<key>firstVisibleLine</key>
+			<integer>0</integer>
+		</dict>
 	</dict>
 	<key>openDocuments</key>
 	<array>
-		<string>app/views/layouts/_header.html.erb</string>
-		<string>app/views/sessions/new.html.erb</string>
+		<string>spec/spec_helper.rb</string>
+		<string>spec/requests/static_pages_spec.rb</string>
+		<string>app/views/static_pages/home.html.erb</string>
 	</array>
 	<key>showFileHierarchyDrawer</key>
 	<true/>
