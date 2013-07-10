@@ -5214,3 +5214,420 @@ Served asset /application.js - 304 Not Modified (3ms)
 
 Started GET "/assets/application.css" for 127.0.0.1 at 2013-07-04 16:09:33 +0100
 Served asset /application.css - 304 Not Modified (4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-07-10 09:58:49 +0100
+Connecting to database specified by database.yml
+Processing by StaticPagesController#home as HTML
+  [1m[36mUser Load (93.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."remember_token" = 'rbpKZpPC0wzX3kRfZ0uckA' LIMIT 1[0m
+  Rendered static_pages/home.html.erb within layouts/application (856.3ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."remember_token" = 'rbpKZpPC0wzX3kRfZ0uckA' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."remember_token" = 'rbpKZpPC0wzX3kRfZ0uckA' LIMIT 1[0m
+  Rendered layouts/_header.html.erb (2.4ms)
+Completed 200 OK in 969ms (Views: 228.9ms | ActiveRecord: 739.3ms)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2013-07-10 09:58:52 +0100
+Served asset /application.css - 304 Not Modified (640ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2013-07-10 09:58:53 +0100
+Served asset /application.js - 304 Not Modified (510ms)
+
+
+Started GET "/scoreboards" for 127.0.0.1 at 2013-07-10 09:58:56 +0100
+Processing by ScoreboardsController#index as HTML
+  [1m[35mUser Load (0.6ms)[0m  SELECT "users".* FROM "users" 
+  [1m[36m (250.1ms)[0m  [1mSELECT SUM("scoreboards"."matchscore") AS sum_id FROM "scoreboards" WHERE "scoreboards"."user_id" = 1[0m
+  [1m[35m (0.7ms)[0m  SELECT SUM("scoreboards"."matchscore") AS sum_id FROM "scoreboards" WHERE "scoreboards"."user_id" = 2
+  [1m[36m (0.5ms)[0m  [1mSELECT SUM("scoreboards"."matchscore") AS sum_id FROM "scoreboards" WHERE "scoreboards"."user_id" = 3[0m
+  [1m[35m (0.5ms)[0m  SELECT SUM("scoreboards"."matchscore") AS sum_id FROM "scoreboards" WHERE "scoreboards"."user_id" = 4
+  [1m[36mUser Load (46.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.6ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 3]]
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 4]]
+  [1m[35mUser Load (1.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."remember_token" = 'rbpKZpPC0wzX3kRfZ0uckA' LIMIT 1
+  Rendered scoreboards/index.html.erb within layouts/application (104.1ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."remember_token" = 'rbpKZpPC0wzX3kRfZ0uckA' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."remember_token" = 'rbpKZpPC0wzX3kRfZ0uckA' LIMIT 1
+  Rendered layouts/_header.html.erb (1.3ms)
+Completed 200 OK in 830ms (Views: 77.3ms | ActiveRecord: 414.9ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2013-07-10 09:58:57 +0100
+Served asset /application.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2013-07-10 09:58:57 +0100
+Served asset /application.css - 304 Not Modified (6ms)
+
+
+Started GET "/scoreboards/summary" for 127.0.0.1 at 2013-07-10 09:58:59 +0100
+Processing by ScoreboardsController#summary as HTML
+  [1m[36mScoreboard Load (10.2ms)[0m  [1mSELECT "scoreboards".* FROM "scoreboards" ORDER BY user_id ASC[0m
+  [1m[35mFixture Load (17.7ms)[0m  SELECT "fixtures".* FROM "fixtures" ORDER BY fixtures.matchdate ASC
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mFixture Load (21.9ms)[0m  SELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE "users"."remember_token" = 'rbpKZpPC0wzX3kRfZ0uckA' LIMIT 1
+  [1m[36mFixture Load (0.4ms)[0m  [1mSELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."remember_token" = 'rbpKZpPC0wzX3kRfZ0uckA' LIMIT 1[0m
+  [1m[35mFixture Load (0.5ms)[0m  SELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1[0m  [["id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."remember_token" = 'rbpKZpPC0wzX3kRfZ0uckA' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1[0m  [["id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."remember_token" = 'rbpKZpPC0wzX3kRfZ0uckA' LIMIT 1[0m
+  [1m[35mFixture Load (0.4ms)[0m  SELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1  [["id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1[0m  [["id", 4]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."remember_token" = 'rbpKZpPC0wzX3kRfZ0uckA' LIMIT 1
+  [1m[36mFixture Load (0.4ms)[0m  [1mSELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1[0m  [["id", 9]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1  [["id", 9]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."remember_token" = 'rbpKZpPC0wzX3kRfZ0uckA' LIMIT 1[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."remember_token" = 'rbpKZpPC0wzX3kRfZ0uckA' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."remember_token" = 'rbpKZpPC0wzX3kRfZ0uckA' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1[0m  [["id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."remember_token" = 'rbpKZpPC0wzX3kRfZ0uckA' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1[0m  [["id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."remember_token" = 'rbpKZpPC0wzX3kRfZ0uckA' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1  [["id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1[0m  [["id", 4]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."remember_token" = 'rbpKZpPC0wzX3kRfZ0uckA' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1[0m  [["id", 9]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1  [["id", 9]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."remember_token" = 'rbpKZpPC0wzX3kRfZ0uckA' LIMIT 1[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 4]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1  [["id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1[0m  [["id", 4]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."remember_token" = 'rbpKZpPC0wzX3kRfZ0uckA' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1[0m  [["id", 9]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "fixtures".* FROM "fixtures" WHERE "fixtures"."id" = $1 ORDER BY fixtures.matchdate ASC LIMIT 1  [["id", 9]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."remember_token" = 'rbpKZpPC0wzX3kRfZ0uckA' LIMIT 1[0m
+  Rendered scoreboards/summary.html.erb within layouts/application (56.9ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."remember_token" = 'rbpKZpPC0wzX3kRfZ0uckA' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."remember_token" = 'rbpKZpPC0wzX3kRfZ0uckA' LIMIT 1[0m
+  Rendered layouts/_header.html.erb (0.9ms)
+Completed 200 OK in 175ms (Views: 49.1ms | ActiveRecord: 74.2ms)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2013-07-10 09:59:00 +0100
+Served asset /application.css - 304 Not Modified (7ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2013-07-10 09:59:00 +0100
+Served asset /application.js - 304 Not Modified (3ms)
+
+
+Started GET "/scoreboards" for 127.0.0.1 at 2013-07-10 09:59:29 +0100
+Processing by ScoreboardsController#index as HTML
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" 
+  [1m[36m (0.4ms)[0m  [1mSELECT SUM("scoreboards"."matchscore") AS sum_id FROM "scoreboards" WHERE "scoreboards"."user_id" = 1[0m
+  [1m[35m (0.4ms)[0m  SELECT SUM("scoreboards"."matchscore") AS sum_id FROM "scoreboards" WHERE "scoreboards"."user_id" = 2
+  [1m[36m (0.3ms)[0m  [1mSELECT SUM("scoreboards"."matchscore") AS sum_id FROM "scoreboards" WHERE "scoreboards"."user_id" = 3[0m
+  [1m[35m (0.5ms)[0m  SELECT SUM("scoreboards"."matchscore") AS sum_id FROM "scoreboards" WHERE "scoreboards"."user_id" = 4
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 3]]
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 4]]
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."remember_token" = 'rbpKZpPC0wzX3kRfZ0uckA' LIMIT 1
+  Rendered scoreboards/index.html.erb within layouts/application (7.0ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."remember_token" = 'rbpKZpPC0wzX3kRfZ0uckA' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."remember_token" = 'rbpKZpPC0wzX3kRfZ0uckA' LIMIT 1
+  Rendered layouts/_header.html.erb (1.0ms)
+Completed 200 OK in 17ms (Views: 9.9ms | ActiveRecord: 3.9ms)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2013-07-10 09:59:29 +0100
+Served asset /application.css - 304 Not Modified (8ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2013-07-10 09:59:29 +0100
+Served asset /application.js - 304 Not Modified (4ms)
+
+
+Started GET "/scoreboards" for 127.0.0.1 at 2013-07-10 10:03:03 +0100
+Processing by ScoreboardsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" [0m
+  [1m[35m (0.3ms)[0m  SELECT SUM("scoreboards"."matchscore") AS sum_id FROM "scoreboards" WHERE "scoreboards"."user_id" = 1
+  [1m[36m (0.3ms)[0m  [1mSELECT SUM("scoreboards"."matchscore") AS sum_id FROM "scoreboards" WHERE "scoreboards"."user_id" = 2[0m
+  [1m[35m (0.2ms)[0m  SELECT SUM("scoreboards"."matchscore") AS sum_id FROM "scoreboards" WHERE "scoreboards"."user_id" = 3
+  [1m[36m (0.2ms)[0m  [1mSELECT SUM("scoreboards"."matchscore") AS sum_id FROM "scoreboards" WHERE "scoreboards"."user_id" = 4[0m
+ERROR: compiling _app_views_scoreboards_index_html_erb___28586803693947880_70199437597040 RAISED /Users/lisapethick/MyRailsProjects/Lions/app/views/scoreboards/index.html.erb:70: syntax error, unexpected keyword_ensure, expecting keyword_end
+/Users/lisapethick/MyRailsProjects/Lions/app/views/scoreboards/index.html.erb:72: syntax error, unexpected $end, expecting keyword_end
+Function body:           def _app_views_scoreboards_index_html_erb___28586803693947880_70199437597040(local_assigns, output_buffer)
+            _old_virtual_path, @virtual_path = @virtual_path, "scoreboards/index";_old_output_buffer = @output_buffer;;@output_buffer = output_buffer || ActionView::OutputBuffer.new;@output_buffer.safe_concat('
+'); require 'date' 
+ date = DateTime.parse("2013-06-21 00:00:00") 
+@output_buffer.safe_concat('
+<h3>Scoreboard</h3>
+
+<ul class="nav nav-tabs">
+<li class="active">	<a href="/scoreboards">Score Summary</a>
+  <li>
+   	<a href="/scoreboards/summary">Scores by Match</a>
+  </li>
+</ul>
+  
+
+<div class="row-fluid">
+  <div class="span6 offset1">
+  
+');   if date > Date.today  
+@output_buffer.safe_concat('			<p>No scores available until after first test</p><br>
+');			 else 
+@output_buffer.safe_concat('
+      	<table>
+        <tr>
+          <th align=\'left\' >Competitor</th>
+          <th><center>Total</center></th>
+        </tr>
+        <tr><td>__________</td><td><center>_____</center></td></tr>
+        <tr>
+
+');          sz = @scoreboards.size 
+          if @scoreboards.any? 
+          for scoreboard in @scoreboards  
+           sz = sz-1 
+           @record = @scoreboards[sz] 
+@output_buffer.safe_concat('          
+');          			 if User.find(@record.first).name == "pethl" 
+          			   elsif 
+@output_buffer.safe_concat('          			  
+');          			  	 if User.find(@record.first).name == "tester1" 
+@output_buffer.safe_concat('          			  	   <td><strong>');@output_buffer.append= ( User.find(@record.first).name  );@output_buffer.safe_concat('</strong></td>
+                        <td><strong><center>');@output_buffer.append= ( @record.second  );@output_buffer.safe_concat('</center></strong></td>
+                  </tr>
+');          			  	   else 
+@output_buffer.safe_concat('
+          <td>');@output_buffer.append= ( User.find(@record.first).name  );@output_buffer.safe_concat('</td>
+          <td><center>');@output_buffer.append= ( @record.second  );@output_buffer.safe_concat('</center></td>
+    </tr>
+');@output_buffer.safe_concat('    '); end ;@output_buffer.safe_concat('  '); end ; end ;@output_buffer.safe_concat('
+');@output_buffer.safe_concat('
+      </table>
+		
+      </div></div>
+'); end 
+@output_buffer.safe_concat(' 
+'); if signed_in? && current_user.admin? 	
+@output_buffer.safe_concat('<br />
+<div class="btn-group btn-group-vertical">
+  <button class="btn btn-large">');@output_buffer.append= ( link_to 'New Scoreboard', new_scoreboard_path, class: "btn btn-primary" );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('  </button>
+  
+  <button class="btn">	
+  ');@output_buffer.append=  form_tag generate_scoreboards_path do @output_buffer.safe_concat('
+');@output_buffer.safe_concat('		');@output_buffer.append= ( text_field_tag :fixture_id );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('		');@output_buffer.append= ( submit_tag "Generate" );@output_buffer.safe_concat('
+');   end 
+@output_buffer.safe_concat('  </button>
+	
+'); end 
+@output_buffer.to_s
+          ensure
+            @virtual_path, @output_buffer = _old_virtual_path, _old_output_buffer
+          end
+
+Backtrace: /Users/lisapethick/.rvm/gems/ruby-1.9.2-p320/gems/actionpack-3.2.12/lib/action_view/template.rb:297:in `module_eval'
+/Users/lisapethick/.rvm/gems/ruby-1.9.2-p320/gems/actionpack-3.2.12/lib/action_view/template.rb:297:in `compile'
+/Users/lisapethick/.rvm/gems/ruby-1.9.2-p320/gems/actionpack-3.2.12/lib/action_view/template.rb:244:in `block in compile!'
+<internal:prelude>:10:in `synchronize'
+/Users/lisapethick/.rvm/gems/ruby-1.9.2-p320/gems/actionpack-3.2.12/lib/action_view/template.rb:232:in `compile!'
+/Users/lisapethick/.rvm/gems/ruby-1.9.2-p320/gems/actionpack-3.2.12/lib/action_view/template.rb:144:in `block in render'
+/Users/lisapethick/.rvm/gems/ruby-1.9.2-p320/gems/activesupport-3.2.12/lib/active_support/notifications.rb:125:in `instrument'
+/Users/lisapethick/.rvm/gems/ruby-1.9.2-p320/gems/actionpack-3.2.12/lib/action_view/template.rb:143:in `render'
+/Users/lisapethick/.rvm/gems/ruby-1.9.2-p320/gems/actionpack-3.2.12/lib/action_view/renderer/template_renderer.rb:47:in `block (2 levels) in render_template'
+/Users/lisapethick/.rvm/gems/ruby-1.9.2-p320/gems/actionpack-3.2.12/lib/action_view/renderer/abstract_renderer.rb:38:in `block in instrument'
+/Users/lisapethick/.rvm/gems/ruby-1.9.2-p320/gems/activesupport-3.2.12/lib/active_support/notifications.rb:123:in `block in instrument'
+/Users/lisapethick/.rvm/gems/ruby-1.9.2-p320/gems/activesupport-3.2.12/lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+/Users/lisapethick/.rvm/gems/ruby-1.9.2-p320/gems/activesupport-3.2.12/lib/active_support/notifications.rb:123:in `instrument'
+/Users/lisapethick/.rvm/gems/ruby-1.9.2-p320/gems/actionpack-3.2.12/lib/action_view/renderer/abstract_renderer.rb:38:in `instrument'
+/Users/lisapethick/.rvm/gems/ruby-1.9.2-p320/gems/actionpack-3.2.12/lib/action_view/renderer/template_renderer.rb:46:in `block in render_template'
+/Users/lisapethick/.rvm/gems/ruby-1.9.2-p320/gems/actionpack-3.2.12/lib/action_view/renderer/template_renderer.rb:54:in `render_with_layout'
+/Users/lisapethick/.rvm/gems/ruby-1.9.2-p320/gems/actionpack-3.2.12/lib/action_view/renderer/template_renderer.rb:45:in `render_template'
+/Users/lisapethick/.rvm/gems/ruby-1.9.2-p320/gems/actionpack-3.2.12/lib/action_view/renderer/template_renderer.rb:18:in `render'
+/Users/lisapethick/.rvm/gems/ruby-1.9.2-p320/gems/actionpack-3.2.12/lib/action_view/renderer/renderer.rb:36:in `render_template'
+/Users/lisapethick/.rvm/gems/ruby-1.9.2-p320/gems/actionpack-3.2.12/lib/action_view/renderer/renderer.rb:17:in `render'
+/Users/lisapethick/.rvm/gems/ruby-1.9.2-p320/gems/actionpack-3.2.12/lib/abstract_controller/rendering.rb:110:in `_render_template'
+/Users/lisapethick/.rvm/gems/ruby-1.9.2-p320/gems/actionpack-3.2.12/lib/action_controller/metal/streaming.rb:225:in `_render_template'
+/Users/lisapethick/.rvm/gems/ruby-1.9.2-p320/gems/actionpack-3.2.12/lib/abstract_controller/rendering.rb:103:in `render_to_body'
+/Users/lisapethick/.rvm/gems/ruby-1.9.2-p320/gems/actionpack-3.2.12/lib/action_controller/metal/renderers.rb:28:in `render_to_body'
+/Users/lisapethick/.rvm/gems/ruby-1.9.2-p320/gems/actionpack-3.2.12/lib/action_controller/metal/compatibility.rb:50:in `render_to_body'
+/Users/lisapethick/.rvm/gems/ruby-1.9.2-p320/gems/actionpack-3.2.12/lib/abstract_controller/rendering.rb:88:in `render'
+/Users/lisapethick/.rvm/gems/ruby-1.9.2-p320/gems/actionpack-3.2.12/lib/action_controller/metal/rendering.rb:16:in `render'
+/Users/lisapethick/.rvm/gems/ruby-1.9.2-p320/gems/actionpack-3.2.12/lib/action_controller/metal/instrumentation.rb:40:in `block (2 levels) in render'
+/Users/lisapethick/.rvm/gems/ruby-1.9.2-p320/gems/activesupport-3.2.12/lib/active_support/core_ext/benchmark.rb:5:in `block in ms'
+/Users/lisapethick/.rvm/rubies/ruby-1.9.2-p320/lib/ruby/1.9.1/benchmark.rb:310:in `realtime'
+/Users/lisapethick/.rvm/gems/ruby-1.9.2-p320/gems/activesupport-3.2.12/lib/active_support/core_ext/benchmark.rb:5:in `ms'
+/Users/lisapethick/.rvm/gems/ruby-1.9.2-p320/gems/actionpack-3.2.12/lib/action_controller/metal/instrumentation.rb:40:in `block in render'
+/Users/lisapethick/.rvm/gems/ruby-1.9.2-p320/gems/actionpack-3.2.12/lib/action_controller/metal/instrumentation.rb:83:in `cleanup_view_runtime'
+/Users/lisapethick/.rvm/gems/ruby-1.9.2-p320/gems/activerecord-3.2.12/lib/active_record/railties/controller_runtime.rb:24:in `cleanup_view_runtime'
+/Users/lisapethick/.rvm/gems/ruby-1.9.2-p320/gems/actionpack-3.2.12/lib/action_controller/metal/instrumentation.rb:39:in `render'
+/Users/lisapethick/.rvm/gems/ruby-1.9.2-p320/gems/actionpack-3.2.12/lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+/Users/lisapethick/.rvm/gems/ruby-1.9.2-p320/gems/actionpack-3.2.12/lib/action_controller/metal/mime_responds.rb:196:in `respond_to'
+/Users/lisapethick/MyRailsProjects/Lions/app/controllers/scoreboards_controller.rb:11:in `index'
+/Users/lisapethick/.rvm/gems/ruby-1.9.2-p320/gems/actionpack-3.2.12/lib/action_controller/metal/implicit_render.rb:4:in `send_action'
+/Users/lisapethick/.rvm/gems/ruby-1.9.2-p320/gems/actionpack-3.2.12/lib/abstract_controller/base.rb:167:in `process_action'
+/Users/lisapethick/.rvm/gems/ruby-1.9.2-p320/gems/actionpack-3.2.12/lib/action_controller/metal/rendering.rb:10:in `process_action'
+/Users/lisapethick/.rvm/gems/ruby-1.9.2-p320/gems/actionpack-3.2.12/lib/abstract_controller/callbacks.rb:18:in `block in process_action'
+/Users/lisapethick/.rvm/gems/ruby-1.9.2-p320/gems/activesupport-3.2.12/lib/active_support/callbacks.rb:414:in `_run__725875883869068213__process_action__3964601712918823740__callbacks'
+/Users/lisapethick/.rvm/gems/ruby-1.9.2-p320/gems/activesupport-3.2.12/lib/active_support/callbacks.rb:405:in `__run_callback'
+/Users/lisapethick/.rvm/gems/ruby-1.9.2-p320/gems/activesupport-3.2.12/lib/active_support/callbacks.rb:385:in `_run_process_action_callbacks'
+/Users/lisapethick/.rvm/gems/ruby-1.9.2-p320/gems/activesupport-3.2.12/lib/active_support/callbacks.rb:81:in `run_callbacks'
+/Users/lisapethick/.rvm/gems/ruby-1.9.2-p320/gems/actionpack-3.2.12/lib/abstract_controller/callbacks.rb:17:in `process_action'
+/Users/lisapethick/.rvm/gems/ruby-1.9.2-p320/gems/actionpack-3.2.12/lib/action_controller/metal/rescue.rb:29:in `process_action'
+/Users/lisapethick/.rvm/gems/ruby-1.9.2-p320/gems/actionpack-3.2.12/lib/action_controller/metal/instrumentation.rb:30:in `block in process_action'
+/Users/lisapethick/.rvm/gems/ruby-1.9.2-p320/gems/activesupport-3.2.12/lib/active_support/notifications.rb:123:in `block in instrument'
+/Users/lisapethick/.rvm/gems/ruby-1.9.2-p320/gems/activesupport-3.2.12/lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+/Users/lisapethick/.rvm/gems/ruby-1.9.2-p320/gems/activesupport-3.2.12/lib/active_support/notifications.rb:123:in `instrument'
+/Users/lisapethick/.rvm/gems/ruby-1.9.2-p320/gems/actionpack-3.2.12/lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+/Users/lisapethick/.rvm/gems/ruby-1.9.2-p320/gems/actionpack-3.2.12/lib/action_controller/metal/params_wrapper.rb:207:in `process_action'
+/Users/lisapethick/.rvm/gems/ruby-1.9.2-p320/gems/activerecord-3.2.12/lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+/Users/lisapethick/.rvm/gems/ruby-1.9.2-p320/gems/actionpack-3.2.12/lib/abstract_controller/base.rb:121:in `process'
+/Users/lisapethick/.rvm/gems/ruby-1.9.2-p320/gems/actionpack-3.2.12/lib/abstract_controller/rendering.rb:45:in `process'
+/Users/lisapethick/.rvm/gems/ruby-1.9.2-p320/gems/actionpack-3.2.12/lib/action_controller/metal.rb:203:in `dispatch'
+/Users/lisapethick/.rvm/gems/ruby-1.9.2-p320/gems/actionpack-3.2.12/lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+/Users/lisapethick/.rvm/gems/ruby-1.9.2-p320/gems/actionpack-3.2.12/lib/action_controller/metal.rb:246:in `block in action'
+/Users/lisapethick/.rvm/gems/ruby-1.9.2-p320/gems/actionpack-3.2.12/lib/action_dispatch/routing/route_set.rb:73:in `call'
+/Users/lisapethick/.rvm/gems/ruby-1.9.2-p320/gems/actionpack-3.2.12/lib/action_dispatch/routing/route_set.rb:73:in `dispatch'
+/Users/lisapethick/.rvm/gems/ruby-1.9.2-p320/gems/actionpack-3.2.12/lib/action_dispatch/routing/route_set.rb:36:in `call'
+/Users/lisapethick/.rvm/gems/ruby-1.9.2-p320/gems/journey-1.0.4/lib/journey/router.rb:68:in `block in call'
+/Users/lisapethick/.rvm/gems/ruby-1.9.2-p320/gems/journey-1.0.4/lib/journey/router.rb:56:in `each'
+/Users/lisapethick/.rvm/gems/ruby-1.9.2-p320/gems/journey-1.0.4/lib/journey/router.rb:56:in `call'
+/Users/lisapethick/.rvm/gems/ruby-1.9.2-p320/gems/actionpack-3.2.12/lib/action_dispatch/routing/route_set.rb:601:in `call'
+/Users/lisapethick/.rvm/gems/ruby-1.9.2-p320/gems/actionpack-3.2.12/lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+/Users/lisapethick/.rvm/gems/ruby-1.9.2-p320/gems/rack-1.4.5/lib/rack/etag.rb:23:in `call'
+/Users/lisapethick/.rvm/gems/ruby-1.9.2-p320/gems/rack-1.4.5/lib/rack/conditionalget.rb:25:in `call'
+/Users/lisapethick/.rvm/gems/ruby-1.9.2-p320/gems/actionpack-3.2.12/lib/action_dispatch/middleware/head.rb:14:in `call'
+/Users/lisapethick/.rvm/gems/ruby-1.9.2-p320/gems/actionpack-3.2.12/lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+/Users/lisapethick/.rvm/gems/ruby-1.9.2-p320/gems/actionpack-3.2.12/lib/action_dispatch/middleware/flash.rb:242:in `call'
+/Users/lisapethick/.rvm/gems/ruby-1.9.2-p320/gems/rack-1.4.5/lib/rack/session/abstract/id.rb:210:in `context'
+/Users/lisapethick/.rvm/gems/ruby-1.9.2-p320/gems/rack-1.4.5/lib/rack/session/abstract/id.rb:205:in `call'
+/Users/lisapethick/.rvm/gems/ruby-1.9.2-p320/gems/actionpack-3.2.12/lib/action_dispatch/middleware/cookies.rb:341:in `call'
+/Users/lisapethick/.rvm/gems/ruby-1.9.2-p320/gems/activerecord-3.2.12/lib/active_record/query_cache.rb:64:in `call'
+/Users/lisapethick/.rvm/gems/ruby-1.9.2-p320/gems/activerecord-3.2.12/lib/active_record/connection_adapters/abstract/connection_pool.rb:479:in `call'
+/Users/lisapethick/.rvm/gems/ruby-1.9.2-p320/gems/actionpack-3.2.12/lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+/Users/lisapethick/.rvm/gems/ruby-1.9.2-p320/gems/activesupport-3.2.12/lib/active_support/callbacks.rb:405:in `_run__1799770952167181192__call__3425935701830185592__callbacks'
+/Users/lisapethick/.rvm/gems/ruby-1.9.2-p320/gems/activesupport-3.2.12/lib/active_support/callbacks.rb:405:in `__run_callback'
+/Users/lisapethick/.rvm/gems/ruby-1.9.2-p320/gems/activesupport-3.2.12/lib/active_support/callbacks.rb:385:in `_run_call_callbacks'
+/Users/lisapethick/.rvm/gems/ruby-1.9.2-p320/gems/activesupport-3.2.12/lib/active_support/callbacks.rb:81:in `run_callbacks'
+/Users/lisapethick/.rvm/gems/ruby-1.9.2-p320/gems/actionpack-3.2.12/lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+/Users/lisapethick/.rvm/gems/ruby-1.9.2-p320/gems/actionpack-3.2.12/lib/action_dispatch/middleware/reloader.rb:65:in `call'
+/Users/lisapethick/.rvm/gems/ruby-1.9.2-p320/gems/actionpack-3.2.12/lib/action_dispatch/middleware/remote_ip.rb:31:in `call'
+/Users/lisapethick/.rvm/gems/ruby-1.9.2-p320/gems/actionpack-3.2.12/lib/action_dispatch/middleware/debug_exceptions.rb:16:in `call'
+/Users/lisapethick/.rvm/gems/ruby-1.9.2-p320/gems/actionpack-3.2.12/lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+/Users/lisapethick/.rvm/gems/ruby-1.9.2-p320/gems/railties-3.2.12/lib/rails/rack/logger.rb:32:in `call_app'
+/Users/lisapethick/.rvm/gems/ruby-1.9.2-p320/gems/railties-3.2.12/lib/rails/rack/logger.rb:16:in `block in call'
+/Users/lisapethick/.rvm/gems/ruby-1.9.2-p320/gems/activesupport-3.2.12/lib/active_support/tagged_logging.rb:22:in `tagged'
+/Users/lisapethick/.rvm/gems/ruby-1.9.2-p320/gems/railties-3.2.12/lib/rails/rack/logger.rb:16:in `call'
+/Users/lisapethick/.rvm/gems/ruby-1.9.2-p320/gems/actionpack-3.2.12/lib/action_dispatch/middleware/request_id.rb:22:in `call'
+/Users/lisapethick/.rvm/gems/ruby-1.9.2-p320/gems/rack-1.4.5/lib/rack/methodoverride.rb:21:in `call'
+/Users/lisapethick/.rvm/gems/ruby-1.9.2-p320/gems/rack-1.4.5/lib/rack/runtime.rb:17:in `call'
+/Users/lisapethick/.rvm/gems/ruby-1.9.2-p320/gems/activesupport-3.2.12/lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+/Users/lisapethick/.rvm/gems/ruby-1.9.2-p320/gems/rack-1.4.5/lib/rack/lock.rb:15:in `call'
+/Users/lisapethick/.rvm/gems/ruby-1.9.2-p320/gems/actionpack-3.2.12/lib/action_dispatch/middleware/static.rb:62:in `call'
+/Users/lisapethick/.rvm/gems/ruby-1.9.2-p320/gems/railties-3.2.12/lib/rails/engine.rb:479:in `call'
+/Users/lisapethick/.rvm/gems/ruby-1.9.2-p320/gems/railties-3.2.12/lib/rails/application.rb:223:in `call'
+/Users/lisapethick/.rvm/gems/ruby-1.9.2-p320/gems/rack-1.4.5/lib/rack/content_length.rb:14:in `call'
+/Users/lisapethick/.rvm/gems/ruby-1.9.2-p320/gems/railties-3.2.12/lib/rails/rack/log_tailer.rb:17:in `call'
+/Users/lisapethick/.rvm/gems/ruby-1.9.2-p320/gems/rack-1.4.5/lib/rack/handler/webrick.rb:59:in `service'
+/Users/lisapethick/.rvm/rubies/ruby-1.9.2-p320/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+/Users/lisapethick/.rvm/rubies/ruby-1.9.2-p320/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+/Users/lisapethick/.rvm/rubies/ruby-1.9.2-p320/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+  Rendered scoreboards/index.html.erb within layouts/application (45.6ms)
+Completed 500 Internal Server Error in 51ms
+
+ActionView::Template::Error (/Users/lisapethick/MyRailsProjects/Lions/app/views/scoreboards/index.html.erb:70: syntax error, unexpected keyword_ensure, expecting keyword_end
+/Users/lisapethick/MyRailsProjects/Lions/app/views/scoreboards/index.html.erb:72: syntax error, unexpected $end, expecting keyword_end):
+    67: 	
+    68: <% end %>
+  app/controllers/scoreboards_controller.rb:11:in `index'
+
+
+  Rendered /Users/lisapethick/.rvm/gems/ruby-1.9.2-p320/gems/actionpack-3.2.12/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.6ms)
+  Rendered /Users/lisapethick/.rvm/gems/ruby-1.9.2-p320/gems/actionpack-3.2.12/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.2ms)
+  Rendered /Users/lisapethick/.rvm/gems/ruby-1.9.2-p320/gems/actionpack-3.2.12/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (27.3ms)
+
+
+Started GET "/scoreboards" for 127.0.0.1 at 2013-07-10 10:03:11 +0100
+Processing by ScoreboardsController#index as HTML
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" 
+  [1m[36m (0.5ms)[0m  [1mSELECT SUM("scoreboards"."matchscore") AS sum_id FROM "scoreboards" WHERE "scoreboards"."user_id" = 1[0m
+  [1m[35m (0.3ms)[0m  SELECT SUM("scoreboards"."matchscore") AS sum_id FROM "scoreboards" WHERE "scoreboards"."user_id" = 2
+  [1m[36m (0.3ms)[0m  [1mSELECT SUM("scoreboards"."matchscore") AS sum_id FROM "scoreboards" WHERE "scoreboards"."user_id" = 3[0m
+  [1m[35m (0.3ms)[0m  SELECT SUM("scoreboards"."matchscore") AS sum_id FROM "scoreboards" WHERE "scoreboards"."user_id" = 4
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 3]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 4]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 4]]
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."remember_token" = 'rbpKZpPC0wzX3kRfZ0uckA' LIMIT 1[0m
+  Rendered scoreboards/index.html.erb within layouts/application (9.0ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."remember_token" = 'rbpKZpPC0wzX3kRfZ0uckA' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."remember_token" = 'rbpKZpPC0wzX3kRfZ0uckA' LIMIT 1[0m
+  Rendered layouts/_header.html.erb (1.2ms)
+Completed 200 OK in 20ms (Views: 12.7ms | ActiveRecord: 3.7ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2013-07-10 10:03:11 +0100
+Served asset /application.js - 304 Not Modified (9ms)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2013-07-10 10:03:12 +0100
+Served asset /application.css - 304 Not Modified (4ms)
+
+
+Started GET "/scoreboards" for 127.0.0.1 at 2013-07-10 10:03:38 +0100
+Processing by ScoreboardsController#index as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" 
+  [1m[36m (0.3ms)[0m  [1mSELECT SUM("scoreboards"."matchscore") AS sum_id FROM "scoreboards" WHERE "scoreboards"."user_id" = 1[0m
+  [1m[35m (0.3ms)[0m  SELECT SUM("scoreboards"."matchscore") AS sum_id FROM "scoreboards" WHERE "scoreboards"."user_id" = 2
+  [1m[36m (0.2ms)[0m  [1mSELECT SUM("scoreboards"."matchscore") AS sum_id FROM "scoreboards" WHERE "scoreboards"."user_id" = 3[0m
+  [1m[35m (0.2ms)[0m  SELECT SUM("scoreboards"."matchscore") AS sum_id FROM "scoreboards" WHERE "scoreboards"."user_id" = 4
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 3]]
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 4]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 4]]
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."remember_token" = 'rbpKZpPC0wzX3kRfZ0uckA' LIMIT 1[0m
+  Rendered scoreboards/index.html.erb within layouts/application (9.4ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."remember_token" = 'rbpKZpPC0wzX3kRfZ0uckA' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."remember_token" = 'rbpKZpPC0wzX3kRfZ0uckA' LIMIT 1[0m
+  Rendered layouts/_header.html.erb (1.0ms)
+Completed 200 OK in 18ms (Views: 12.6ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2013-07-10 10:03:38 +0100
+Served asset /application.css - 304 Not Modified (4ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2013-07-10 10:03:38 +0100
+Served asset /application.js - 304 Not Modified (3ms)
